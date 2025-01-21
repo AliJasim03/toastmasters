@@ -236,7 +236,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 40px;
   margin-right: 8px;
 }
 
@@ -287,7 +287,11 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
+  /*
   --background-color: rgba(1, 8, 33, 0.82);
+  */
+  --background-color: #A9B2B1;
+
 }
 
 /*--------------------------------------------------------------
