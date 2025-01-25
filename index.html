@@ -3,6 +3,16 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="theme-color" content="var(--background-color)">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https:;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  font-src 'self' data: https://fonts.gstatic.com;
+  img-src 'self' data: https:;
+  frame-src 'self' https://www.google.com https://www.youtube.com;
+  connect-src 'self';
+">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>DTAC 2025 - District 20</title>
     <meta name="description" content="">
@@ -11,12 +21,6 @@
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/favicon.png" rel="apple-touch-icon">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          rel="stylesheet">-->
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,51 +45,20 @@
 
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
         <a href="index.html" class="logo d-flex align-items-center me-auto">
-            <img src="assets/img/logo-dtac.png" alt="">
-            <!-- Uncomment the line below if you also wish to use an text logo -->
-            <!-- <h1 class="sitename">TheEvent</h1>  -->
+            <img src="assets/img/logo-dtac.png" alt="DTAC Logo">
         </a>
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home<br></a></li>
-    <!--            <li><a href="#speakers">Speakers</a></li>
-                <li><a href="#schedule">Schedule</a></li>-->
+                <li><a href="#hero" class="active">Home</a></li>
                 <li><a href="#venue">Venue</a></li>
-<!--
-                <li><a href="#hotels">Hotels</a></li>
--->
-<!--
-                <li><a href="#gallery">Gallery</a></li>
--->
-                <!--
-                          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                              <li><a href="#">Dropdown 1</a></li>
-                              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                                <ul>
-                                  <li><a href="#">Deep Dropdown 1</a></li>
-                                  <li><a href="#">Deep Dropdown 2</a></li>
-                                  <li><a href="#">Deep Dropdown 3</a></li>
-                                  <li><a href="#">Deep Dropdown 4</a></li>
-                                  <li><a href="#">Deep Dropdown 5</a></li>
-                                </ul>
-                              </li>
-                              <li><a href="#">Dropdown 2</a></li>
-                              <li><a href="#">Dropdown 3</a></li>
-                              <li><a href="#">Dropdown 4</a></li>
-                            </ul>
-                          </li>
-                -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
         <a class="cta-btn d-none d-sm-block" href="#buy-tickets">Register Now</a>
-
     </div>
 </header>
 
@@ -93,24 +66,24 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-
-
-        <img src="assets/img/banner.jpg" alt="" data-aos="fade-in" class="">
-
+        <img src="assets/img/banner.jpg" alt="Conference Banner" data-aos="fade-in" loading="eager"
+             decoding="sync">
 
         <div class="container d-flex flex-column align-items-center text-center mt-auto">
-            <h2 data-aos="fade-up" data-aos-delay="100" class="">District 20 Toastmasters Annual Contest<br><span>UNLEASHING THE POWER OF SPEECH</span>
+            <h2 data-aos="fade-up" data-aos-delay="100">
+                District 20 Toastmasters Annual Contest<br>
+                <span>UNLEASHING THE POWER OF SPEECH</span>
             </h2>
-            <p data-aos="fade-up" data-aos-delay="200">22-24 May at the Crowne Plaza Conference Center,
-                Kingdom of Bahrain</p>
-            <div data-aos="fade-up" data-aos-delay="300" class="">
-                <a href="https://www.youtube.com/watch?v=cFX64zxS60o&t=1s" class="glightbox pulsating-play-btn mt-3"></a>
+            <p data-aos="fade-up" data-aos-delay="200">
+                22-24 May at the Crowne Plaza Conference Center, Kingdom of Bahrain
+            </p>
+            <div data-aos="fade-up" data-aos-delay="300">
+                <a href="https://www.youtube.com/watch?v=cFX64zxS60o&t=1s"
+                   class="glightbox pulsating-play-btn mt-3"></a>
             </div>
         </div>
 
-
         <div class="about-info mt-auto position-relative">
-
             <div class="container position-relative" data-aos="fade-up">
                 <div class="row">
                     <div class="col-lg-8">
@@ -118,11 +91,10 @@
                         <p>The DTAC 25 Toastmasters Competition is a celebration of public speaking excellence, where
                             participants showcase their oratory skills and leadership potential. The event brings
                             together passionate speakers, mentors, and audiences, fostering a community of growth and
-                            inspiration. Join us as we witness powerful speeches, inspiring stories, and the pursuit of
-                            greatness in communication.</p>
+                            inspiration.</p>
                     </div>
                     <div class="col-lg-2">
-                        <h3 style="text-transform: unset">Where <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M27,4H9V28H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Z" fill="#ea3323"></path><path d="M10,23.2l6-2.4-6-2.4,6-2.4-6-2.4,6-2.4-6-2.4,6-2.4-6-2.4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4h5l6-2.4-6-2.4Z" fill="#fff"></path><path d="M27,4H5c-2.209,0-4,1.791-4,4V24c0,2.209,1.791,4,4,4H27c2.209,0,4-1.791,4-4V8c0-2.209-1.791-4-4-4Zm3,20c0,1.654-1.346,3-3,3H5c-1.654,0-3-1.346-3-3V8c0-1.654,1.346-3,3-3H27c1.654,0,3,1.346,3,3V24Z" opacity=".15"></path><path d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z" fill="#fff" opacity=".2"></path></svg></h3>
+                        <h3 style="text-transform: unset">Where</h3>
                         <p>Kingdom of Bahrain</p>
                     </div>
                     <div class="col-lg-2">
@@ -132,1404 +104,233 @@
                 </div>
             </div>
         </div>
-
     </section>
-    <!-- /Hero Section -->
-
-    <!-- Speakers Section -->
-<!--
-    <section id="speakers" class="speakers section">
-
-        &lt;!&ndash; Section Title &ndash;&gt;
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Event Speakers<br></h2>
-
-        </div>&lt;!&ndash; End Section Title &ndash;&gt;
-
-        <div class="container">
-
-            <div class="row gy-4">
-
-                <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member">
-                        <img src="assets/img/speakers/Mohamemd-Shukri.jpg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4><a href="speaker-details.html">Muhammad Shukri</a></h4>
-                                <span>Founder, CEO - Y Access Training Solutions</span>
-                            </div>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>&lt;!&ndash; End Team Member &ndash;&gt;
-
-                <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="member">
-                        <img src="assets/img/speakers/Roshan-Lewis.jpeg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4><a href="speaker-details.html">Roshan Lewis</a></h4>
-                                <span>Director Director - GTS TRIONET WLL</span>
-                            </div>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>&lt;!&ndash; End Team Member &ndash;&gt;
-
-                <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="member">
-                        <img src="assets/img/speakers/Ali-Shahbaz.jpeg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4><a href="speaker-details.html">Ali Shahbaz</a></h4>
-                                <span>Senior Lecturer - Bahrain Polytechnic</span>
-                            </div>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>&lt;!&ndash; End Team Member &ndash;&gt;
-
-                <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="member">
-                        <img src="assets/img/speakers/thob-speaker.jpeg" class="img-fluid" alt="">
-                        <div class="member-info">
-                            <div class="member-info-content">
-                                <h4><a href="speaker-details.html">Thob Speaker</a></h4>
-                                <span>Working lad</span>
-                            </div>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter-x"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>&lt;!&ndash; End Team Member &ndash;&gt;
-
-                <div class="row gy-4">
-
-                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="member">
-                            <img src="assets/img/speakers/ok-speaker.jpeg" class="img-fluid" alt="">
-                            <div class="member-info">
-                                <div class="member-info-content">
-                                    <h4><a href="speaker-details.html">Ok Speaker</a></h4>
-                                    <span>Working lad 2</span>
-                                </div>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>&lt;!&ndash; End Team Member &ndash;&gt;
-
-                    <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="member">
-                            <img src="assets/img/speakers/woman-speaker.jpeg" class="img-fluid" alt="">
-                            <div class="member-info">
-                                <div class="member-info-content">
-                                    <h4><a href="speaker-details.html">Woman Speaker</a></h4>
-                                    <span>Working lad 3</span>
-                                </div>
-                                <div class="social">
-                                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>&lt;!&ndash; End Team Member &ndash;&gt;
-
-                </div>
-            </div>
-
-        </div>
-
-    </section>
--->
-    <!-- /Speakers Section -->
-
-    <!-- Schedule Section -->
-<!--
-    <section id="schedule" class="schedule section">
-
-        &lt;!&ndash; Section Title &ndash;&gt;
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Event Schedule<br></h2>
-            <p>Discover the exciting lineup of speeches, workshops, and activities at DTAC 25. Plan your day and don’t
-                miss a moment of inspiration and excellence.</p>
-        </div>&lt;!&ndash; End Section Title &ndash;&gt;
-
-        <div class="container">
-
-            <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Opening Day</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Day 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Day 2</a>
-                </li>
-            </ul>
-
-            <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-
-                &lt;!&ndash;
-                                <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia.
-                                    Eius necessitatibus voluptatem quis labore perspiciatis quia.</h3>
-                &ndash;&gt;
-
-                &lt;!&ndash; Schdule Day 1 &ndash;&gt;
-                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-                    <h3 class="sub-heading">Dive into three days of inspiring speeches, exciting contests, and
-                        transformative learning experiences at DTAC 2025.</h3>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>18:00</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Registration</h4>
-                            <p>Registration Description.</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>18:30</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/salmah-shaikho.jpg" alt="TM Salma Shaikho">
-                            </div>
-                            <h4>Call to Order by MC</h4>
-                            <p>TM Salma Shaikho, TM Hasan Almosawi</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>18:40</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/agenda/bader-bushlaibi.jpeg" alt="DTM Bader Bushlaibi">
-                            </div>
-                            <h4>DTAC Chair Opening Address</h4>
-                            <p>DTM Bader Bushlaibi</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>18:50</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/nasser-bin-hamad.jpg"
-                                     alt="HH Shaikh Nasser Bin Hamad Al Khalifa">
-                            </div>
-                            <h4>Address by Patron</h4>
-                            <p>HH Shaikh Nasser Bin Hamad Al Khalifa</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:00</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/ali-shahbaz-ali.jpg" alt="DTM Ali Shahbaz Ali">
-                            </div>
-                            <h4>International Director Address</h4>
-                            <p>DTM Ali Shahbaz Ali</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:05</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/khalid-abdulla.jpg" alt="DTM Khalid Abdulla">
-                            </div>
-                            <h4>District 20 Director Address</h4>
-                            <p>DTM Khalid Abdulla</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:10</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/agenda/yunus-abdulaal.jpeg" alt="TM Sarah Ebrahim">
-                            </div>
-                            <h4>Souvenir Launch</h4>
-                            <p>TM Sarah Ebrahim, DTM Yunus Abdulaal</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:20</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/ali-shahbaz-ali.jpg" alt="DTM Ali Shahbaz Ali">
-                            </div>
-                            <h4>Soft Skills & Career Enhancement</h4>
-                            <p>International Director, DTM Ali Shahbaz Ali</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:35</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/pat-johnson.jpg" alt="DTM Pat Johnson">
-                            </div>
-                            <h4>Toastmasters from a Corporate Perspective</h4>
-                            <p>Past International President, DTM Pat Johnson</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>20:05</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/mohamed-shukri.jpg" alt="DTM Mohamed Shukri">
-                            </div>
-                            <h4>Speaking of Business</h4>
-                            <p>Accredited Speaker, DTM Mohamed Shukri</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>20:20</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/cajetan-barretto.jpg" alt="DTM Cajetan Barretto">
-                            </div>
-                            <h4>Create Human Connections with AI</h4>
-                            <p>Yoodli Ambassador, DTM Cajetan Barretto</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>20:35</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/khalid-abdulla.jpg" alt="DTM Khalid Abdulla">
-                            </div>
-                            <h4>Panel Discussion</h4>
-                            <p>DTM Khalid Abdulla</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>21:00</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/pon-sankar.jpg" alt="DTM Pon Sankar">
-                            </div>
-                            <h4>Vote of Thanks Ceremony</h4>
-                            <p>DTM Pon Sankar</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>21:25</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Group Photo and Closing Remarks</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>21:30</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Dinner</h4>
-                        </div>
-                    </div>
-                </div>
-                &lt;!&ndash; End Schedule day-1 &ndash;&gt;
-
-                &lt;!&ndash; Schdule Day 2 &ndash;&gt;
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-                    <h3 class="sub-heading">Join us as we celebrate the art of public speaking and leadership, with
-                        engaging sessions and unforgettable moments.</h3>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>07:45 - 07:50</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/zainab-hassan.jpg" alt="TM Zainab Hassan">
-                            </div>
-                            <h4>Call to Order by MC</h4>
-                            <p>TM Zainab Hassan, TM Indu Nair</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>07:50 - 07:55</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/bader-bushlaibi.jpg" alt="DTM Bader Bushlaibi">
-                            </div>
-                            <h4>DTAC Chair Opening Address</h4>
-                            <p>DTM Bader Bushlaibi</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>08:00 - 08:10</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/raja-manickam.jpg" alt="DTM Raja Manickam">
-                            </div>
-                            <h4>Banner March</h4>
-                            <p>DTM Raja Manickam</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>08:15 - 09:55</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/mohamed-hasan.jpg" alt="TM Mohamed Hasan">
-                            </div>
-                            <h4>International Speech Contest</h4>
-                            <p>TM Mohamed Hasan</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>09:55 - 10:05</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Break</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>10:10 - 11:10</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/muhammad-jahangir.jpg" alt="DTM Muhammad Jahangir">
-                            </div>
-                            <h4>Table Topics Contest</h4>
-                            <p>DTM Muhammad Jahangir</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>11:15 - 13:00</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Break for Prayer and Lunch</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>13:05 - 13:25</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/ali-shahbaz-ali.jpg" alt="DTM Ali Shahbaz Ali">
-                            </div>
-                            <h4>Barriers and Beyond Barriers</h4>
-                            <p>DTM Ali Shahbaz Ali</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>13:25 - 14:15</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/pat-johnson.jpg" alt="DTM Pat Johnson">
-                            </div>
-                            <h4>A Leadership Journey</h4>
-                            <p>DTM Pat Johnson</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>14:20 - 15:35</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/dahlia-eldeeb.jpg" alt="TM Dahlia Eldeeb">
-                            </div>
-                            <h4>Evaluation Contest</h4>
-                            <p>TM Dahlia Eldeeb</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>15:35 - 15:45</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Break</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>15:50 - 17:40</time>
-                        </div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="assets/img/speakers/sandy-stein.jpg" alt="DTM Sandy Stein">
-                            </div>
-                            <h4>Humorous Speech Contest</h4>
-                            <p>DTM Sandy Stein</p>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>17:45 - 18:05</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>District Installation</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>18:05 - 19:05</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Awards</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:05 - 19:15</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Day 1 Announcement of Contests Results</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:15 - 19:20</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Group Photo and Closing Remarks</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:20 - 20:30</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Break</h4>
-                        </div>
-                    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>20:30 - 23:00</time>
-                        </div>
-                        <div class="col-md-10">
-                            <h4>Gala Dinner</h4>
-                        </div>
-                    </div>
-
-                </div>
-                &lt;!&ndash; End Schdule Day 2 &ndash;&gt;
-
-                &lt;!&ndash; Schdule Day 3 &ndash;&gt;
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
-                    <h3 class="sub-heading">Explore the detailed schedule of events that promises inspiration, competition, and connection at DTAC 2025.</h3>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>08:00 - 08:10</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/wajeeha-bahbhani.jpg" alt="DTM Wajeeha Bahbhani">
-                        </div>            <h4>Call to Order by MC</h4>
-                        <p>DTM Wajeeha Bahbhani, TM Moteb Alkhaldi</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>08:10 - 08:15</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/bader-bushlaibi.jpg" alt="DTM Bader Bushlaibi">
-                        </div>            <h4>DTAC Chair Opening Address</h4>
-                        <p>DTM Bader Bushlaibi</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>08:15 - 09:55</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/seham-mohammed.jpg" alt="DTM Seham Mohammed">
-                        </div>            <h4>Evaluation Contest</h4>
-                        <p>DTM Seham Mohammed</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>09:55 - 10:10</time>
-                        </div>        <div class="col-md-10">
-                        <h4>Break</h4>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>10:15 - 11:30</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/taqi-abdulla.jpg" alt="TM Taqi Abdulla">
-                        </div>            <h4>Humorous Speech Contest</h4>
-                        <p>TM Taqi Abdulla</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>11:30 - 13:00</time>
-                        </div>        <div class="col-md-10">
-                        <h4>Break for Prayer and Lunch</h4>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>13:05 - 13:35</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/mohammed-murad.jpg" alt="DTM Mohammed Murad">
-                        </div>            <h4>Creating Leaders</h4>
-                        <p>DTM Mohammed Murad</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>13:40 - 14:25</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/faez-almemaari.jpg" alt="DTM Faez Almemaari">
-                        </div>            <h4>From the Small House to Influence</h4>
-                        <p>DTM Faez Almemaari</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>14:30 - 15:30</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/dahlia-eldeeb.jpg" alt="TM Dahlia Eldeeb">
-                        </div>            <h4>Table Topics Contest</h4>
-                        <p>TM Dahlia Eldeeb</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>15:30 - 15:45</time>
-                        </div>        <div class="col-md-10">
-                        <h4>Break</h4>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>15:50 - 17:55</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/roaya-abdulmoamem.jpg" alt="TM Roaya Abdulmoamem">
-                        </div>            <h4>Arabic Speech Contest</h4>
-                        <p>TM Roaya Abdulmoamem</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>18:00 - 18:30</time>
-                        </div>        <div class="col-md-10">
-                        <h4>Break</h4>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>18:40 - 18:55</time>
-                        </div>        <div class="col-md-10">
-                        <div class="speaker">
-                            <img src="assets/img/speakers/yunus-abdulaal.jpg" alt="DTM Yunus Abdulaal">
-                        </div>            <h4>Vote of Thanks</h4>
-                        <p>DTM Yunus Abdulaal</p>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:00 - 19:20</time>
-                        </div>        <div class="col-md-10">
-                        <h4>Day 2 Announcement of Contests Results</h4>
-                    </div>    </div>
-                    <div class="row schedule-item">
-                        <div class="col-md-2">
-                            <time>19:25 - 19:30</time>
-                        </div>        <div class="col-md-10">
-                        <h4>Group Photo and Closing Remarks</h4>
-                    </div>    </div>
-
-                </div>&lt;!&ndash; End Schdule Day 3 &ndash;&gt;
-
-            </div>
-
-        </div>
-    </section>
--->
-    <!-- /Schedule Section -->
 
     <!-- Venue Section -->
     <section id="venue" class="venue section">
-
-        <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Event Venue<br></h2>
-            <p>Experience the grandeur of DTAC 25 at the prestigious Crowne venue. Located in the heart of the city, it
-                provides the perfect setting for inspiring speeches and networking opportunities.</p>
-        </div><!-- End Section Title -->
+            <h2>Event Venue</h2>
+            <p>Experience the grandeur of DTAC 25 at the prestigious Crowne venue</p>
+        </div>
 
         <div class="container-fluid" data-aos="fade-up">
-
             <div class="row g-0">
                 <div class="col-lg-6 venue-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.5527566477913!2d50.587647975416665!3d26.243717877052323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49a5f95d2dd3f7%3A0x1f812d678dd33d05!2sCrowne%20Plaza%20Manama%20(Bahrain)%2C%20an%20IHG%20Hotel!5e0!3m2!1sen!2sbh!4v1733438507396!5m2!1sen!2sbh"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.5527566477913!2d50.587647975416665!3d26.243717877052323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49a5f95d2dd3f7%3A0x1f812d678dd33d05!2sCrowne%20Plaza%20Manama%20(Bahrain)%2C%20an%20IHG%20Hotel!5e0!3m2!1sen!2sbh!4v1733438507396!5m2!1sen!2sbh"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
 
                 <div class="col-lg-6 venue-info">
                     <div class="row justify-content-center">
                         <div class="col-11 col-lg-8 position-relative">
-                            <h3>Crown Venue, Manama</h3>
-<!--                            <p>
-                                Prepare to witness the apex of public speaking excellence at the DTAC 2025 Annual Toastmasters Contest. This distinguished event is a celebration of oratory prowess, where participants exhibit their superior communication skills and demonstrate their leadership potential. It transcends a mere contest, fostering a congregation of devoted speakers, experienced mentors, and appreciative audiences, all committed to a shared journey of growth and inspiration. We invite you to join us for a series of profound speeches and inspiring narratives, and to honor the unwavering dedication to excellence in communication. Let us come together to elevate and celebrate the esteemed art of public speaking.
-
-                            </p>-->
+                            <h3>Crowne Plaza Conference Center</h3>
+                            <p>Located in the heart of Manama, this premium venue offers state-of-the-art facilities and
+                                excellent accessibility for all participants.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="container-fluid venue-gallery-container" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-0">
-
-<!--
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-1.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-1.png" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
--->
-
                 <div class="col-lg-3 col-md-4">
                     <div class="venue-gallery">
                         <a href="assets/img/venue-gallery/crowne-plaza-2.png" class="glightbox"
                            data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-2.png" alt="" class="img-fluid">
+                            <img src="assets/img/venue-gallery/crowne-plaza-2.png" alt="Venue Gallery 1"
+                                 class="img-fluid" loading="lazy">
                         </a>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-4">
                     <div class="venue-gallery">
                         <a href="assets/img/venue-gallery/crowne-plaza-3.png" class="glightbox"
                            data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-3.png" alt="" class="img-fluid">
+                            <img src="assets/img/venue-gallery/crowne-plaza-3.png" alt="Venue Gallery 2"
+                                 class="img-fluid" loading="lazy">
                         </a>
                     </div>
                 </div>
-
                 <div class="col-lg-3 col-md-4">
                     <div class="venue-gallery">
                         <a href="assets/img/venue-gallery/crowne-plaza-4.png" class="glightbox"
                            data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-4.png" alt="" class="img-fluid">
+                            <img src="assets/img/venue-gallery/crowne-plaza-4.png" alt="Venue Gallery 3"
+                                 class="img-fluid" loading="lazy">
                         </a>
                     </div>
                 </div>
-
-<!--
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-5.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-5.png" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
--->
-
-<!--
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-6.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-6.png" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>
--->
-
-<!--                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-7.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-7.png" alt="" class="img-fluid">
-                        </a>
-                    </div>
-                </div>-->
-
                 <div class="col-lg-3 col-md-4">
                     <div class="venue-gallery">
                         <a href="assets/img/venue-gallery/crowne-plaza-8.png" class="glightbox"
                            data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-8.png" alt="" class="img-fluid">
+                            <img src="assets/img/venue-gallery/crowne-plaza-8.png" alt="Venue Gallery 4"
+                                 class="img-fluid" loading="lazy">
                         </a>
                     </div>
                 </div>
-
             </div>
-        </div>
-
-    </section><!-- /Venue Section -->
-
-    <!-- Hotels Section -->
-<!--
-    <section id="hotels" class="hotels section">
-
-        &lt;!&ndash; Section Title &ndash;&gt;
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Hotels</h2>
-            <p>Discover top-rated hotels near the Crown venue for a comfortable stay during the DTAC 25 Toastmasters
-                competition. From luxury accommodations to budget-friendly options, we’ve curated a list of the best
-                places to stay, ensuring a convenient and relaxing experience for all attendees.</p>
-        </div>&lt;!&ndash; End Section Title &ndash;&gt;
-
-        <div class="container">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100">
-                        <div class="card-img">
-                            <img src="assets/img/hotels-1.jpg" alt="" class="img-fluid">
-                        </div>
-                        <h3><a href="#" class="stretched-link">Non quibusdam blanditiis</a></h3>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <p>0.4 Mile from the Venue</p>
-                    </div>
-                </div>&lt;!&ndash; End Card Item &ndash;&gt;
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100">
-                        <div class="card-img">
-                            <img src="assets/img/hotels-2.jpg" alt="" class="img-fluid">
-                        </div>
-                        <h3><a href="#" class="stretched-link">Aspernatur assumenda</a></h3>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <p>0.5 Mile from the Venue</p>
-                    </div>
-                </div>&lt;!&ndash; End Card Item &ndash;&gt;
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100">
-                        <div class="card-img">
-                            <img src="assets/img/hotels-3.jpg" alt="" class="img-fluid">
-                        </div>
-                        <h3><a href="#" class="stretched-link">Dolores ut ut voluptatibu</a></h3>
-                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
-                        <p>0.6 Mile from the Venue</p>
-                    </div>
-                </div>&lt;!&ndash; End Card Item &ndash;&gt;
-
-            </div>
-
-        </div>
-
-    </section>
--->
-    <!-- /Hotels Section -->
-
-    <!-- Gallery Section -->
-<!--
-    <section id="gallery" class="gallery section">
-
-        &lt;!&ndash; Section Title &ndash;&gt;
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Gallery</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div>&lt;!&ndash; End Section Title &ndash;&gt;
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="swiper init-swiper">
-                <script type="application/json" class="swiper-config">
-                    {
-                        "loop": true,
-                        "speed": 600,
-                        "autoplay": {
-                            "delay": 5000
-                        },
-                        "slidesPerView": "auto",
-                        "centeredSlides": true,
-                        "pagination": {
-                            "el": ".swiper-pagination",
-                            "type": "bullets",
-                            "clickable": true
-                        },
-                        "breakpoints": {
-                            "320": {
-                                "slidesPerView": 1,
-                                "spaceBetween": 0
-                            },
-                            "768": {
-                                "slidesPerView": 3,
-                                "spaceBetween": 20
-                            },
-                            "1200": {
-                                "slidesPerView": 5,
-                                "spaceBetween": 20
-                            }
-                        }
-                    }
-                </script>
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-1.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-1.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-2.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-2.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-3.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-3.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-4.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-4.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-5.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-5.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-6.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-6.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-7.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-7.jpg" class="img-fluid" alt=""></a></div>
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery"
-                                                 href="assets/img/event-gallery/event-gallery-8.jpg"><img
-                            src="assets/img/event-gallery/event-gallery-8.jpg" class="img-fluid" alt=""></a></div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-
-    </section>
--->
-    <!-- /Gallery Section -->
-
-    <!-- Sponsors Section -->
-<!--
-    <section id="sponsors" class="sponsors section light-background">
-
-        &lt;!&ndash; Section Title &ndash;&gt;
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Sponsors</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div>&lt;!&ndash; End Section Title &ndash;&gt;
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row g-0 clients-wrap">
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/90/Gulf_Air_Logo_2018.svg/560px-Gulf_Air_Logo_2018.svg.png"
-                         class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://www.bizbahrain.com/wp-content/uploads/2023/09/tamkeen-logo.webp" class="img-fluid"
-                         alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://www.albaraka.com.tr/_assets/img/albaraka-logo.svg" class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://www.alkhuloodeng.com/img/alkhulood%20engineering%20logo.png" class="img-fluid"
-                         alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://sustainability.uob.edu.bh/wp-content/uploads/2020/11/tatweer-petroleum-vector-logo-400x222.png"
-                         class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://www.bahrainiindustri.com/wp-content/uploads/GPCI_LOGO.png" class="img-fluid"
-                         alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a8/Bahrain_National_Gas_Company_logo.png"
-                         class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Bapco_logo16.png" class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://energy-utilities.com/Screen%20Shot%202020-09-02%20at%203.09.27%20PM-comp292560.png"
-                         class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://www.narrativebh.com/web/image/website/1/logo/Narrative?unique=14020d4"
-                         class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-
-                <div class="col-xl-3 col-md-4 client-logo">
-                    <img src="https://techbay.io/sites/default/files/Techbay%20Logo_2.jpg" class="img-fluid" alt="">
-                </div>&lt;!&ndash; End Client Item &ndash;&gt;
-
-            </div>
-
         </div>
     </section>
--->
-    <!-- /Sponsors Section -->
 
-    <!-- Faq Section -->
-<!--
-    <section id="faq" class="faq section">
-
-        &lt;!&ndash; Section Title &ndash;&gt;
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Frequently Asked Questions</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        </div>&lt;!&ndash; End Section Title &ndash;&gt;
-
-        <div class="container">
-
-            <div class="row justify-content-center">
-
-                <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-                    <div class="faq-container">
-
-                        <div class="faq-item faq-active">
-                            <h3>Non consectetur a erat nam at lectus urna duis?</h3>
-                            <div class="faq-content">
-                                <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet
-                                    non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor
-                                    purus non.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div>&lt;!&ndash; End Faq item&ndash;&gt;
-
-                        <div class="faq-item">
-                            <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
-                            <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
-                                    donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
-                                    cursus turpis massa tincidunt dui.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div>&lt;!&ndash; End Faq item&ndash;&gt;
-
-                        <div class="faq-item">
-                            <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
-                            <div class="faq-content">
-                                <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus
-                                    pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
-                                    Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis
-                                    tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div>&lt;!&ndash; End Faq item&ndash;&gt;
-
-                        <div class="faq-item">
-                            <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
-                            <div class="faq-content">
-                                <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum
-                                    velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend
-                                    donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
-                                    cursus turpis massa tincidunt dui.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div>&lt;!&ndash; End Faq item&ndash;&gt;
-
-                        <div class="faq-item">
-                            <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
-                            <div class="faq-content">
-                                <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in
-                                    est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl
-                                    suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div>&lt;!&ndash; End Faq item&ndash;&gt;
-
-                        <div class="faq-item">
-                            <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
-                            <div class="faq-content">
-                                <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in
-                                    suscipit sequi. Distinctio ipsam dolore et.</p>
-                            </div>
-                            <i class="faq-toggle bi bi-chevron-right"></i>
-                        </div>&lt;!&ndash; End Faq item&ndash;&gt;
-
-                    </div>
-
-                </div>&lt;!&ndash; End Faq Column&ndash;&gt;
-
-            </div>
-
-        </div>
-
-    </section>
--->
-    <!-- /Faq Section -->
-
-    <!-- Buy Tickets Section -->
+    <!-- Registration Section -->
     <section id="buy-tickets" class="buy-tickets section light-background">
-
-        <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Registration is open<br></h2>
-<!--
-            <p>Get tickets for attending DTAC 25</p>
--->
-        </div><!-- End Section Title -->
+            <h2>Registration</h2>
+            <p>Secure your spot at the premier public speaking event of the year</p>
+        </div>
 
         <div class="container">
-            <div class="row gy-4 pricing-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <h3>DTAC Fees</h3>
+            <div class="row gy-4 pricing-item align-items-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 text-center">
+                    <h3>Registration Fees</h3>
                 </div>
-                <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                    <div class="d-flex gap-4"> <!-- Added gap for spacing -->
-                        <h4><sup>BD</sup>20 |</h4>
-                        <h4><sup>KWD</sup>17 |</h4>
-                        <h4><sup>USD</sup>55</h4>
+                <div class="col-lg-4 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <h4><sup>BD</sup>20</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4><sup>KWD</sup>17</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4><sup>USD</sup>55</h4>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <div class="text-center">
-                        <a href="https://forms.gle/9NdUUhUweZh7RDsy9" class="buy-btn" target="_blank">Register Now</a>
-                    </div>
+                <div class="col-lg-4 text-center">
+                    <a href="https://forms.gle/9NdUUhUweZh7RDsy9"
+                       class="buy-btn"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Register Now
+                    </a>
                 </div>
             </div>
-            </div>
-
-<!--
-            <div class="row gy-4 pricing-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <h3>DTAC Fees</h3>
-                </div>
-                <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                    <h4><sup>$</sup>55|</h4>
-                    <h4><sup>BD</sup>20|</h4>
-                    <h4><sup>KWD</sup>17</h4>
-                </div>
-&lt;!&ndash;                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <ul>
-                        <li><i class="bi bi-check"></i> <span>3 Days for the event</span></li>
-&lt;!&ndash;                        <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                        <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>&ndash;&gt;
-                    </ul>
-                </div>&ndash;&gt;
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <div class="text-center"><a href="https://forms.gle/9NdUUhUweZh7RDsy9" class="buy-btn" target="_blank">Register Now</a></div>
-                </div>
-            </div>
--->
-            <!-- End Pricing Item -->
-
-<!--            <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <h3>Premium Access<br></h3>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <h4><sup>$</sup>250<span> / month</span></h4>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <ul>
-                        <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                        <li><i class="bi bi-check"></i> <strong>Nec feugiat nisl pretium</strong></li>
-                        <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-                </div>
-            </div>
-            &lt;!&ndash; End Pricing Item &ndash;&gt;-->
-<!--
-            <div class="row gy-4 pricing-item mt-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <h3>Pro Access<br></h3>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <h4><sup>$</sup>350<span> / month</span></h4>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <ul>
-                        <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                        <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                        <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 d-flex align-items-center justify-content-center">
-                    <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-                </div>
-            </div>-->
-            <!-- End Pricing Item -->
-
-<!--
         </div>
--->
-
-    </section><!-- /Buy Tickets Section -->
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact section">
-
-        <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Contact</h2>
-            <p>Feel free to contact our DTAC team</p>
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-6">
-                    <div class="info-item d-flex flex-column justify-content-center align-items-center"
-                         data-aos="fade-up" data-aos-delay="200">
-                        <i class="bi bi-geo-alt"></i>
-                        <h3>Address</h3>
-                        <p>Crowne Plaza Manama (Bahrain), an IHG Hotel</p>
-                    </div>
-                </div><!-- End Info Item -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="info-item d-flex flex-column justify-content-center align-items-center"
-                         data-aos="fade-up" data-aos-delay="300">
-                        <i class="bi bi-telephone"></i>
-                        <h3>Call Us</h3>
-                        <p>+973 3777 6690</p>
-                    </div>
-                </div><!-- End Info Item -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="info-item d-flex flex-column justify-content-center align-items-center"
-                         data-aos="fade-up" data-aos-delay="400">
-                        <i class="bi bi-envelope"></i>
-                        <h3>Email Us</h3>
-                        <p>reg.dtac2025@gmail.com</p>
-                    </div>
-                </div><!-- End Info Item -->
-
-            </div>
-
-<!--
-            <div class="row gy-4 mt-1">
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-                            frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>&lt;!&ndash; End Google Maps &ndash;&gt;
-
-                <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-                          data-aos-delay="400">
-                        <div class="row gy-4">
-
-                            <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                       required="">
-                            </div>
-
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject"
-                                       required="">
-                            </div>
-
-                            <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message"
-                                          required=""></textarea>
-                            </div>
-
-                            <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                <button type="submit">Send Message</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>&lt;!&ndash; End Contact Form &ndash;&gt;
-
-            </div>
--->
-
+            <h2>Contact Us</h2>
+            <p>Get in touch with our organizing team</p>
         </div>
 
-    </section><!-- /Contact Section -->
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <div class="info-item d-flex flex-column align-items-center">
+                        <i class="bi bi-geo-alt fs-1"></i>
+                        <h3>Address</h3>
+                        <p>Crowne Plaza Manama<br>Kingdom of Bahrain</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="info-item d-flex flex-column align-items-center">
+                        <i class="bi bi-telephone fs-1"></i>
+                        <h3>Phone</h3>
+                        <p>+973 3777 6690</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="info-item d-flex flex-column align-items-center">
+                        <i class="bi bi-envelope fs-1"></i>
+                        <h3>Email</h3>
+                        <p>reg.dtac2025@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main>
 
 <footer id="footer" class="footer dark-background">
-
     <div class="footer-top">
         <div class="container">
             <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
+                <div class="col-lg-5 col-md-7 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
                         <span class="sitename">DTAC 2025</span>
                     </a>
                     <div class="footer-contact pt-3">
-<!--                        <p>A108 Adam Street</p>
-                        <p>New York, NY 535022</p>-->
                         <p class="mt-3"><strong>Phone:</strong> <span>+973 3777 6690</span></p>
                         <p><strong>Email:</strong> <span>reg.dtac2025@gmail.com</span></p>
                     </div>
                 </div>
 
-                <div class="col-lg-8 col-md-6 footer-links">
+                <div class="col-lg-3 col-md-4 footer-links">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Terms of service</a></li>
-                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#venue">Venue</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
 <!--
-                <div class="col-lg-2 col-md-3 footer-links">
+                <div class="col-lg-3 col-md-3 footer-links">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Product Management</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Graphic Design</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Hic solutasetp</h4>
-                    <ul>
-                        <li><a href="#">Molestiae accusamus iure</a></li>
-                        <li><a href="#">Excepturi dignissimos</a></li>
-                        <li><a href="#">Suscipit distinctio</a></li>
-                        <li><a href="#">Dilecta</a></li>
-                        <li><a href="#">Sit quas consectetur</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Nobis illum</h4>
-                    <ul>
-                        <li><a href="#">Ipsam</a></li>
-                        <li><a href="#">Laudantium dolorum</a></li>
-                        <li><a href="#">Dinera</a></li>
-                        <li><a href="#">Trodelas</a></li>
-                        <li><a href="#">Flexo</a></li>
+                        <li><a href="#">Public Speaking</a></li>
+                        <li><a href="#">Leadership Training</a></li>
+                        <li><a href="#">Workshops</a></li>
                     </ul>
                 </div>
 -->
 
-            </div>
-        </div>
-    </div>
-
-    <div class="copyright text-center">
-        <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-
-            <div class="d-flex flex-column align-items-center align-items-lg-start">
-<!--                <div>
-                    © Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
+                <div class="col-lg-4 col-md-4 footer-links">
+                    <h4>Social Media</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/DTAC2025.Bahrain" class="facebook">
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+                        <a href="https://www.instagram.com/dtac2025.bahrain/" class="instagram">
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+                        <a href="#" class="linkedin">
+                            <i class="bi bi-linkedin fs-5"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="credits">
-                    &lt;!&ndash; All the links in the footer should remain intact. &ndash;&gt;
-                    &lt;!&ndash; You can delete the links only if you purchased the pro version. &ndash;&gt;
-                    &lt;!&ndash; Licensing information: https://bootstrapmade.com/license/ &ndash;&gt;
-                    &lt;!&ndash; Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ &ndash;&gt;
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>-->
             </div>
-
-            <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-<!--
-                <a href=""><i class="bi bi-twitter-x"></i></a>
--->
-                <a href="https://www.facebook.com/DTAC2025.Bahrain"><i class="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/dtac2025.bahrain/?hl=en"><i class="bi bi-instagram"></i></a>
-<!--                <a href=""><i class="bi bi-linkedin"></i></a>-->
-            </div>
-
         </div>
     </div>
 
+<!--    <div class="copyright text-center">-->
+<!--        <div class="container">-->
+<!--            <div class="credits">-->
+<!--                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </footer>
-
 <!-- Scroll Top -->
-<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
 
 <!-- Preloader -->
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
+<!-- Initialize Features -->
+<script>
+    AOS.init(); // Required for animations
+    GLightbox(); // Required for lightboxes
+</script>
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>

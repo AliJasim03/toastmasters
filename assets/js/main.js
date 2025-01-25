@@ -6,6 +6,58 @@
 * License: https://bootstrapmade.com/license/
 */
 
+// Initialize Swiper after your swiper container
+const initSwiper = () => {
+  new Swiper('.init-swiper', {
+    loop: true,
+    speed: 600,
+    autoplay: {
+      delay: 5000
+    },
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    breakpoints: {
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 3 },
+      1200: { slidesPerView: 5 }
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init();
+  GLightbox();
+  initSwiper();
+});
+// Updated JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+  const preloader = document.getElementById('preloader');
+
+  // Fallback timeout in case load event never fires
+  const timeout = setTimeout(() => {
+    removePreloader();
+  }, 4000); // 4 second timeout
+
+  function removePreloader() {
+    if (!preloader) return;
+
+    // Trigger fade-out transition
+    preloader.classList.add('loaded');
+
+    // Remove element after transition
+    setTimeout(() => {
+      preloader.remove();
+      clearTimeout(timeout);
+    }, 600); // Match transition duration (600ms)
+  }
+
+  window.addEventListener('load', removePreloader);
+});
+
 (function() {
   "use strict";
 
@@ -19,9 +71,23 @@
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
+// NEW HERO Z-INDEX HANDLING - Add this right after
+  function manageHeroLayer() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return; // Safety check
+    hero.style.zIndex = window.scrollY > 100 ? '0' : '2';
+  }
 
+// Update event listeners
+  document.addEventListener('scroll', () => {
+    toggleScrolled();
+    manageHeroLayer(); // Add this line
+  });
+
+// Remove any existing preloader-related JS and use only this
+  window.addEventListener('load', () => {
+    document.querySelector('#preloader')?.remove();
+  });
   /**
    * Mobile nav toggle
    */
