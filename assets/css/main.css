@@ -1604,6 +1604,24 @@ section,
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
+#contest-roles .buy-btn {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 4px;
+  transition: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+  font-family: var(--heading-font);
+}
+
+#contest-roles .buy-btn:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
 .buy-tickets .featured {
   background: var(--accent-color);
 }
