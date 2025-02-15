@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: dark)">
     <meta name="background-color" content="#FFFFFF">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="DTAC 2025">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="DTAC 2025">
-    <meta name="format-detection" content="telephone=no">
 
     <!-- SEO Meta Tags -->
     <title>DTAC 2025 - District 20</title>
@@ -432,7 +431,7 @@
 <script>
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('./service-worker.js')
                 .then((registration) => {
                     console.log('ServiceWorker registration successful');
                 })
