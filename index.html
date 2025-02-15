@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#772432">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="DTAC 2025">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png">
+
     <meta charset="utf-8">
     <meta name="theme-color" content="var(--background-color)">
     <meta http-equiv="Content-Security-Policy" content="
@@ -405,6 +412,20 @@
 
 <!-- Preloader -->
 <div id="preloader"></div>
+<!--progress web app-->
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('ServiceWorker registration successful');
+                })
+                .catch((error) => {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+        });
+    }
+</script>
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,23 @@
+{
+  "name": "DTAC 2025 - District 20",
+  "short_name": "DTAC 2025",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000820",
+  "theme_color": "#772432",
+  "description": "District 20 Toastmasters Annual Contest",
+  "icons": [
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
