@@ -2,32 +2,46 @@
 <html lang="en">
 
 <head>
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#772432">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="DTAC 2025">
-    <link rel="apple-touch-icon" href="assets/img/favicon.png">
-
+    <!-- Character Set and Viewport -->
     <meta charset="utf-8">
-    <meta name="theme-color" content="var(--background-color)">
-    <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' 'unsafe-inline' https:;
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-  font-src 'self' data: https://fonts.gstatic.com;
-  img-src 'self' data: https:;
-  frame-src 'self' https://www.google.com https://www.youtube.com;
-  connect-src 'self';
-">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>DTAC 2025 - District 20</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/favicon.png" rel="apple-touch-icon">
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#772432">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="DTAC 2025">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="DTAC 2025">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- SEO Meta Tags -->
+    <title>DTAC 2025 - District 20</title>
+    <meta name="description" content="District 20 Toastmasters Annual Contest - UNLEASHING THE POWER OF SPEECH">
+    <meta name="keywords" content="toastmasters, public speaking, contest, DTAC 2025, Bahrain">
+
+    <!-- Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https: 'unsafe-eval';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' data: https://fonts.gstatic.com;
+        img-src 'self' data: https:;
+        frame-src 'self' https://www.google.com https://www.youtube.com;
+        connect-src 'self' https:;
+        worker-src 'self';
+    ">
+
+    <!-- PWA Icons and Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="assets/img/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="assets/img/favicon-192.png">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
