@@ -63,7 +63,15 @@
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
-      preloader.remove();
+      // First add the 'loaded' class to fade it out
+      preloader.classList.add('loaded');
+
+      // Then remove it after the transition completes
+      setTimeout(() => {
+        if (preloader && preloader.parentNode) {
+          preloader.remove();
+        }
+      }, 300); // Match your transition duration
     });
   }
 
