@@ -34,7 +34,6 @@
     ">
 
     <!-- PWA Icons and Manifest -->
-    <link rel="manifest" href="./manifest.json">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png">
 
@@ -102,8 +101,7 @@
                 22-24 May at the Crowne Plaza Conference Center, Kingdom of Bahrain
             </p>
             <div data-aos="fade-up" data-aos-delay="300">
-                <a href="https://www.youtube.com/watch?v=cFX64zxS60o&t=1s"
-                   class="glightbox pulsating-play-btn mt-3"></a>
+                <a href="https://www.youtube.com/watch?v=cFX64zxS60o" class="glightbox pulsating-play-btn mt-3"></a>
             </div>
         </div>
 
@@ -144,7 +142,8 @@
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.5527566477913!2d50.587647975416665!3d26.243717877052323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49a5f95d2dd3f7%3A0x1f812d678dd33d05!2sCrowne%20Plaza%20Manama%20(Bahrain)%2C%20an%20IHG%20Hotel!5e0!3m2!1sen!2sbh!4v1733438507396!5m2!1sen!2sbh"
                             allowfullscreen=""
                             loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
+                            referrerpolicy="no-referrer-when-downgrade"
+                    >
                     </iframe>
                 </div>
 
@@ -375,16 +374,36 @@
 <div id="preloader"></div>
 <!--progress web app-->
 <script>
-    if ('serviceWorker' in navigator) {
+
+    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        document.write('<link rel="manifest" href="/toastmasters/manifest.json">');
+    }
+    // Check if we're in development mode (localhost)
+    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+    // Only register service worker in production
+    if (!isDevelopment && 'serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./service-worker.js')
-                .then((registration) => {
-                    console.log('ServiceWorker registration successful');
+                .then(registration => {
+                    console.log('ServiceWorker registration successful:', registration);
                 })
-                .catch((error) => {
-                    console.log('ServiceWorker registration failed:', error);
+                .catch(error => {
+                    console.error('ServiceWorker registration failed:', error);
                 });
         });
+    } else {
+        console.log('PWA features disabled in development mode');
+
+        // Unregister any existing service workers in development
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(registrations => {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('ServiceWorker unregistered for development mode');
+                }
+            });
+        }
     }
 </script>
 

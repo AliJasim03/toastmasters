@@ -1,62 +1,10 @@
 /**
-* Template Name: TheEvent
-* Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-// Initialize Swiper after your swiper container
-const initSwiper = () => {
-  new Swiper('.init-swiper', {
-    loop: true,
-    speed: 600,
-    autoplay: {
-      delay: 5000
-    },
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    breakpoints: {
-      320: { slidesPerView: 1 },
-      768: { slidesPerView: 3 },
-      1200: { slidesPerView: 5 }
-    }
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  AOS.init();
-  GLightbox();
-  initSwiper();
-});
-// Updated JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-  const preloader = document.getElementById('preloader');
-
-  // Fallback timeout in case load event never fires
-  const timeout = setTimeout(() => {
-    removePreloader();
-  }, 4000); // 4 second timeout
-
-  function removePreloader() {
-    if (!preloader) return;
-
-    // Trigger fade-out transition
-    preloader.classList.add('loaded');
-
-    // Remove element after transition
-    setTimeout(() => {
-      preloader.remove();
-      clearTimeout(timeout);
-    }, 600); // Match transition duration (600ms)
-  }
-
-  window.addEventListener('load', removePreloader);
-});
+ * Template Name: TheEvent
+ * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+ * Updated: Aug 07 2024 with Bootstrap v5.3.3
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
 
 (function() {
   "use strict";
@@ -71,23 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
-// NEW HERO Z-INDEX HANDLING - Add this right after
-  function manageHeroLayer() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return; // Safety check
-    hero.style.zIndex = window.scrollY > 100 ? '0' : '2';
-  }
+  document.addEventListener('scroll', toggleScrolled);
+  window.addEventListener('load', toggleScrolled);
 
-// Update event listeners
-  document.addEventListener('scroll', () => {
-    toggleScrolled();
-    manageHeroLayer(); // Add this line
-  });
-
-// Remove any existing preloader-related JS and use only this
-  window.addEventListener('load', () => {
-    document.querySelector('#preloader')?.remove();
-  });
   /**
    * Mobile nav toggle
    */
@@ -109,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileNavToogle();
       }
     });
-
   });
 
   /**
@@ -125,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   /**
-   * Preloader
+   * Preloader - USING SINGLE APPROACH
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
@@ -144,13 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -180,14 +116,28 @@ document.addEventListener('DOMContentLoaded', function() {
    */
   function initSwiper() {
     document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+      if (!swiperElement.querySelector(".swiper-config")) {
+        console.error("Swiper config not found for element", swiperElement);
+        return;
+      }
 
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
+      try {
+        let config = JSON.parse(
+            swiperElement.querySelector(".swiper-config").innerHTML.trim()
+        );
+
+        if (swiperElement.classList.contains("swiper-tab")) {
+          if (typeof initSwiperWithCustomPagination === 'function') {
+            initSwiperWithCustomPagination(swiperElement, config);
+          } else {
+            console.error("initSwiperWithCustomPagination function not defined");
+            new Swiper(swiperElement, config);
+          }
+        } else {
+          new Swiper(swiperElement, config);
+        }
+      } catch (error) {
+        console.error("Error initializing swiper:", error);
       }
     });
   }
