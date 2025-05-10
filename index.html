@@ -18,17 +18,17 @@
 
     <!-- SEO Meta Tags -->
     <title>DTAC 2025 - District 20</title>
-    <meta name="description" content="District 20 Toastmasters Annual Conference - UNLEASHING THE POWER OF SPEECH">
+    <meta name="description" content="District 20 Toastmasters Annual Conference - ECHOES OF EXCELLENCE">
     <meta name="keywords" content="toastmasters, public speaking, conference, DTAC 2025, Bahrain">
 
     <!-- Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
         script-src 'self' 'unsafe-inline' https: https://maps.googleapis.com 'unsafe-eval';
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.plyr.io;
         font-src 'self' data: https://fonts.gstatic.com;
         img-src 'self' data: https: https://maps.googleapis.com https://maps.gstatic.com;
-        frame-src 'self' https://www.google.com https://www.youtube.com;
+        frame-src 'self' https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com;
         connect-src 'self' https: https://maps.googleapis.com;
         worker-src 'self';
     ">
@@ -53,13 +53,54 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: TheEvent
-    * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
-    * Updated: Aug 07 2024 with Bootstrap v5.3.3
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
+    <style>
+        .day-badge {
+            display: inline-block;
+            background-color: #772432;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .event-card {
+            border-left: 4px solid #772432;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .speaker-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .speaker-info {
+            padding: 20px;
+            background: white;
+        }
+
+        .speaker-tag {
+            display: inline-block;
+            background: #004165;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body class="index-page">
@@ -73,9 +114,10 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#schedule">Schedule</a></li>
                 <li><a href="#venue">Venue</a></li>
-<!--                <li><a href="#join-team">Join Team</a></li>-->
-                <li><a href="#contest-roles" class="active">Conference Roles</a></li>
+                <li><a href="#contest-roles">Conference Roles</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -95,7 +137,7 @@
         <div class="container d-flex flex-column align-items-center text-center mt-auto">
             <h2 data-aos="fade-up" data-aos-delay="100">
                 District 20 Toastmasters Annual Conference<br>
-                <span>UNLEASHING THE POWER OF SPEECH</span>
+                <span>ECHOES OF EXCELLENCE</span>
             </h2>
             <p data-aos="fade-up" data-aos-delay="200">
                 22-24 May at the Crowne Plaza Conference Center, Kingdom of Bahrain
@@ -109,8 +151,8 @@
             <div class="container position-relative" data-aos="fade-up">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h2>About The DTAC 25 Toastmasters Annual Conference</h2>
-                        <p>The DTAC 25 Toastmasters Competition is a celebration of public speaking excellence, where
+                        <h2>About The DTAC 2025 Conference</h2>
+                        <p>The DTAC 2025 Conference is a celebration of public speaking excellence, where
                             participants showcase their oratory skills and leadership potential. The event brings
                             together passionate speakers, mentors, and audiences, fostering a community of growth and
                             inspiration.</p>
@@ -128,11 +170,552 @@
         </div>
     </section>
 
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="sponsors section light-background">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Sponsors</h2>
+            <p>We thank our esteemed sponsors whose generous support makes DTAC 2025 possible. Their commitment to excellence in communication and leadership development helps enrich our community.</p>
+        </div>
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-0 clients-wrap">
+                <div class="col-xl-3 col-md-4 client-logo">
+                    <img src="https://www.bizbahrain.com/wp-content/uploads/2023/09/tamkeen-logo.webp" class="img-fluid" alt="Tamkeen">
+                </div>
+                <div class="col-xl-3 col-md-4 client-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/31/Bapco_logo16.png" class="img-fluid" alt="Bapco">
+                </div>
+                <div class="col-xl-3 col-md-4 client-logo">
+                    <img src="assets/img/sponsers/mazaji.png" class="img-fluid" alt="Mazaji">
+                </div>
+                <div class="col-xl-3 col-md-4 client-logo">
+                    <img src="https://www.bahrainiindustri.com/wp-content/uploads/GPCI_LOGO.png" class="img-fluid" alt="GPCI">
+                </div>
+                <div class="col-xl-3 col-md-4 client-logo">
+                    <img src="https://www.narrativebh.com/web/image/website/1/logo/Narrative?unique=14020d4" class="img-fluid" alt="Narrative">
+                </div>
+                <div class="col-xl-3 col-md-4 client-logo">
+                    <img src="https://techbay.io/sites/default/files/Techbay%20Logo_2.jpg" class="img-fluid" alt="Techbay">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Speakers Section -->
+    <section id="speakers" class="speakers section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Featured Speakers</h2>
+            <p>Discover thought leaders and expert communicators who will inspire and empower you throughout the conference</p>
+        </div>
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="speaker-card">
+                        <img src="assets/img/speakers/Mohamed-Shukri.jpg" class="img-fluid w-100" alt="Mohamed Shukri">
+                        <div class="speaker-info">
+                            <span class="speaker-tag">Keynote Speaker</span>
+                            <h4>Mohamed Shukri, DTM</h4>
+                            <p class="text-muted">Founder & CEO - Y Access Training Solutions</p>
+                            <h5 class="mt-3 text-primary">"Why Me? Don't be chosen. Be chased."</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="speaker-card">
+                        <img src="assets/img/speakers/mohamed-isa.jpg" class="img-fluid w-100" alt="Mohamed Isa">
+                        <div class="speaker-info">
+                            <span class="speaker-tag">Keynote Speaker</span>
+                            <h4>Mohamed Isa, DTM</h4>
+                            <p class="text-muted">Distinguished Toastmaster</p>
+                            <h5 class="mt-3 text-primary">"Everest Leadership"</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="speaker-card">
+                        <img src="assets/img/speakers/Suhail-Algosaibi.jpg" class="img-fluid w-100" alt="Suhail Bin Ghazi Al Gosaibi">
+                        <div class="speaker-info">
+                            <span class="speaker-tag">Featured Speaker</span>
+                            <h4>Suhail Bin Ghazi Al Gosaibi</h4>
+                            <p class="text-muted">Business Leader & Innovator</p>
+                            <h5 class="mt-3 text-primary">"The Secrets of Transformational Leadership"</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row gy-4 mt-4">
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="speaker-card">
+                        <img src="assets/img/speakers/Neena-Wilson.jpg" class="img-fluid w-100" alt="Neena Wilson">
+                        <div class="speaker-info">
+                            <span class="speaker-tag">Workshop Presenter</span>
+                            <h4>Neena Wilson, DTM</h4>
+                            <p class="text-muted">Distinguished Toastmaster</p>
+                            <h5 class="mt-3 text-primary">"Bridging Generations: Effective Communication Strategies"</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="speaker-card">
+                        <img src="assets/img/speakers/Khurram-Salman.jpg" class="img-fluid w-100" alt="Khurram Salman">
+                        <div class="speaker-info">
+                            <span class="speaker-tag">Workshop Presenter</span>
+                            <h4>Khurram Salman, DTM</h4>
+                            <p class="text-muted">Distinguished Toastmaster</p>
+                            <h5 class="mt-3 text-primary">"Personal Branding with LinkedIn"</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="speaker-card">
+                        <img src="assets/img/speakers/Sheikha-Al-Shaiba.jpg" class="img-fluid w-100" alt="Sheikha Al Shaiba">
+                        <div class="speaker-info">
+                            <span class="speaker-tag">Keynote Speaker</span>
+                            <h4>Sheikha Al Shaiba</h4>
+                            <p class="text-muted">Leadership Coach</p>
+                            <h5 class="mt-3 text-primary">"The Power of Resilience"</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule section light-background">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Event Schedule</h2>
+            <p>Discover the exciting lineup of speeches, workshops, and activities at DTAC 2025</p>
+        </div>
+
+        <div class="container">
+            <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Day 1: Thursday</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Day 2: Friday</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Day 3: Saturday</a>
+                </li>
+            </ul>
+
+            <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <!-- Day 1 Schedule -->
+                <div role="tabpanel" class="col-lg-10 tab-pane fade show active" id="day-1">
+                    <h3 class="sub-heading mb-4">Thursday, 22nd May 2025</h3>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">6:30 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Opening & Welcome</h4>
+                                <p class="text-muted mb-0">Master of Ceremonies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">6:45 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">DTAC Chair Opening Address</h4>
+                                <p class="text-muted mb-0">DTM Yunus Abdulaal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">7:00 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Address by Patron</h4>
+                                <p class="text-muted mb-0">HH Shaikh Isa bin Salman bin Hamad Al Khalifa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">7:10 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">The Secrets of Transformational Leadership</h4>
+                                <p class="text-muted mb-0">Suhail Ghazi Algosaibi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">7:35 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Why Me? Don't be chosen. Be chased.</h4>
+                                <p class="text-muted mb-0">DTM Mohamed Shukri</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">8:05 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">The Power of Resilience</h4>
+                                <p class="text-muted mb-0">Sheikha Al Shaiba</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">8:45 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Group Photo and Dinner with Entertainment</h4>
+                                <p class="text-muted mb-0">All Participants</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 Schedule -->
+                <div role="tabpanel" class="col-lg-10 tab-pane fade" id="day-2">
+                    <h3 class="sub-heading mb-4">Friday, 23rd May 2025</h3>
+
+                    <div class="day-badge">Morning Session</div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">7:50 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Call to Order</h4>
+                                <p class="text-muted mb-0">Master of Ceremonies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">9:05 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Everest Leadership</h4>
+                                <p class="text-muted mb-0">Mohamed Isa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">9:40 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Evaluation Speech Contest (English)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">11:45 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Break for Prayer & Lunch</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-badge">Afternoon Session</div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">1:20 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Humorous Speech Contest (English)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">4:15 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Arabic Program - Call to Order</h4>
+                                <p class="text-muted mb-0">Master of Ceremonies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">4:50 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Evaluation Speech Contest (Arabic)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">6:35 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Keynote Speech (Arabic)</h4>
+                                <p class="text-muted mb-0">DTM Mohamed Shukri</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">7:05 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Humorous Speech Contest (Arabic)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 Schedule -->
+                <div role="tabpanel" class="col-lg-10 tab-pane fade" id="day-3">
+                    <h3 class="sub-heading mb-4">Saturday, 24th May 2025</h3>
+
+                    <div class="day-badge">Morning Session</div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">8:00 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Call to Order</h4>
+                                <p class="text-muted mb-0">Master of Ceremonies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">8:30 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Keynote Speech (Arabic)</h4>
+                                <p class="text-muted mb-0">Mohamed Isa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">9:05 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Table Topics Speech Contest (Arabic)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">10:10 AM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">International Speech Contest (Arabic)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-badge">Afternoon Session</div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">1:30 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Call to Order (English Program)</h4>
+                                <p class="text-muted mb-0">Master of Ceremonies</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">2:05 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Keynote Speech (English)</h4>
+                                <p class="text-muted mb-0">Raji Unnikrishnan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">2:30 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Table Topic Speech Contest (English)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">4:00 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">International Speech Contest (English)</h4>
+                                <p class="text-muted mb-0">Contest Chair</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card event-card p-3 mb-4">
+                        <div class="d-flex align-items-center">
+                            <div class="me-4">
+                                <h5 class="mb-0">7:10 PM</h5>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Announcements of Results & Closing</h4>
+                                <p class="text-muted mb-0">Chief Judges / Contest Chairs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshop Section -->
+    <section id="workshops" class="section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Workshops</h2>
+            <p>Enhance your skills with specialized workshops throughout the conference</p>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="card mb-4 h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0">English Workshops</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h5>Bridging Generations: Effective Communication</h5>
+                                    <span class="badge bg-secondary">Friday, 4:30 PM</span>
+                                </div>
+                                <p class="text-muted">Presenter: DTM Neena Wilson</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h5>Personal Branding with LinkedIn</h5>
+                                    <span class="badge bg-secondary">Friday, 6:30 PM</span>
+                                </div>
+                                <p class="text-muted">Presenter: DTM Khurram Salman</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h5>Employee Wellbeing & Happiness</h5>
+                                    <span class="badge bg-secondary">Saturday, 9:30 AM</span>
+                                </div>
+                                <p class="text-muted">Presenter: DTM Wafaa Salman</p>
+                            </div>
+
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>ASAP-"Accredited Speaker" Accelerator Program</h5>
+                                    <span class="badge bg-secondary">Saturday, 11:15 AM</span>
+                                </div>
+                                <p class="text-muted">Presenter: DTM Mohamed Shukri</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card mb-4 h-100">
+                        <div class="card-header bg-success text-white">
+                            <h4 class="mb-0">Arabic Workshops</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h5>The Frequently Asked Question: AM I a Leader</h5>
+                                    <span class="badge bg-secondary">Friday, 1:30 PM</span>
+                                </div>
+                                <p class="text-muted">Presenter: Dr. Osama Bahar</p>
+                            </div>
+
+                            <div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>Who said "You have to be Rich" to invest?</h5>
+                                    <span class="badge bg-secondary">Saturday, 2:30 PM</span>
+                                </div>
+                                <p class="text-muted">Presenter: DTM Kamal Al Shehabi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Venue Section -->
-    <section id="venue" class="venue section">
+    <section id="venue" class="venue section light-background">
         <div class="container section-title" data-aos="fade-up">
             <h2>Event Venue</h2>
-            <p>Experience the grandeur of DTAC 25 at the prestigious Crowne venue</p>
+            <p>Experience the grandeur of DTAC 25 at the prestigious Crowne Plaza venue</p>
         </div>
 
         <div class="container-fluid" data-aos="fade-up">
@@ -202,16 +785,17 @@
     </section>
 
     <!-- Registration Section -->
-    <section id="buy-tickets" class="buy-tickets section light-background">
+    <section id="buy-tickets" class="buy-tickets section">
         <div class="container section-title" data-aos="fade-up">
             <h2>Registration</h2>
-            <p>Secure your spot at the premier public speaking event of the year</p>
+            <p>Online registration is now closed. On-spot registration will be available at the venue.</p>
         </div>
 
         <div class="container">
             <div class="row gy-4 pricing-item align-items-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-4 text-center">
-                    <h3>Registration Fees</h3>
+                    <h3>Standard Registration</h3>
+                    <p><span class="badge bg-secondary">Registration Closed</span></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <div class="row justify-content-center">
@@ -227,12 +811,31 @@
                     </div>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <a href="https://forms.gle/9NdUUhUweZh7RDsy9"
-                       class="buy-btn"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Register Now
-                    </a>
+                    <button class="buy-btn" disabled>Registration Closed</button>
+                </div>
+            </div>
+
+            <!-- Featured On-Spot Registration -->
+            <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 text-center">
+                    <h3>On-Spot Registration</h3>
+                    <p><span class="badge bg-success">Available at Venue</span></p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <h4><sup>BD</sup>60</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4><sup>KWD</sup>50</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4><sup>USD</sup>160</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <p class="text-white">Available at conference registration desk</p>
                 </div>
             </div>
         </div>
@@ -262,16 +865,15 @@
                         <i class="bi bi-person-workspace fs-1"></i>
                         <h3>Be Part of Something Great</h3>
                         <p class="text-center">Step up, make connections, and contribute to an unforgettable event.</p>
-                        <!--                        <a href="" class="buy-btn mt-4">Apply Now</a>-->
                     </div>
                 </div>
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="400">
-                        <a href="contest-roles.html"
-                           class="buy-btn"
-                           rel="noopener noreferrer">
-                            Apply Now
-                        </a>
-                    </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <a href="contest-roles.html"
+                       class="buy-btn"
+                       rel="noopener noreferrer">
+                        Apply Now
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -309,7 +911,6 @@
             </div>
         </div>
     </section>
-
 </main>
 
 <footer id="footer" class="footer dark-background">
@@ -330,21 +931,12 @@
                     <h4>Useful Links</h4>
                     <ul>
                         <li><a href="#hero">Home</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
                         <li><a href="#venue">Venue</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-
-                <!--
-                                <div class="col-lg-3 col-md-3 footer-links">
-                                    <h4>Our Services</h4>
-                                    <ul>
-                                        <li><a href="#">Public Speaking</a></li>
-                                        <li><a href="#">Leadership Training</a></li>
-                                        <li><a href="#">Workshops</a></li>
-                                    </ul>
-                                </div>
-                -->
 
                 <div class="col-lg-4 col-md-4 footer-links">
                     <h4>Social Media</h4>
@@ -355,7 +947,7 @@
                         <a href="https://www.instagram.com/dtac2025.bahrain/" class="instagram">
                             <i class="bi bi-instagram fs-5"></i>
                         </a>
-                        <a href="#" class="linkedin">
+                        <a href="https://www.linkedin.com/company/dtac2025" class="linkedin">
                             <i class="bi bi-linkedin fs-5"></i>
                         </a>
                     </div>
@@ -363,8 +955,8 @@
             </div>
         </div>
     </div>
-
 </footer>
+
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
     <i class="bi bi-arrow-up-short"></i>
@@ -372,16 +964,15 @@
 
 <!-- Preloader -->
 <div id="preloader"></div>
-<!--progress web app-->
-<script>
 
+<!-- Progressive Web App -->
+<script>
     if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
         document.write('<link rel="manifest" href="/toastmasters/manifest.json">');
     }
-    // Check if we're in development mode (localhost)
+
     const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 
-    // Only register service worker in production
     if (!isDevelopment && 'serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./service-worker.js')
@@ -395,7 +986,6 @@
     } else {
         console.log('PWA features disabled in development mode');
 
-        // Unregister any existing service workers in development
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(registrations => {
                 for (let registration of registrations) {
@@ -412,11 +1002,23 @@
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
 <!-- Initialize Features -->
 <script>
     AOS.init(); // Required for animations
-    GLightbox(); // Required for lightboxes
+    GLightbox({
+        plyr: {
+            css: false,
+            js: false,
+            config: {
+                youtube: {
+                    noCookie: false
+                }
+            }
+        }
+    }); // Required for lightboxes with video support
 </script>
+
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
 
