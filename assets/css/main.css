@@ -1791,3 +1791,325 @@ html {
 body {
   scrollbar-gutter: stable;
 }
+
+/*--------------------------------------------------------------
+# Enhanced Speakers Section
+--------------------------------------------------------------*/
+.speaker-profile {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.speaker-profile:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.speaker-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.speaker-image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.speaker-profile:hover .speaker-image img {
+  transform: scale(1.05);
+}
+
+.speaker-social {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.speaker-profile:hover .speaker-social {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.speaker-social a {
+  width: 36px;
+  height: 36px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.speaker-social a:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 15%);
+}
+
+.speaker-info {
+  padding: 25px;
+}
+
+.speaker-role {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.speaker-info h4 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.speaker-position {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.speaker-topic {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-left: 3px solid var(--accent-color);
+  padding: 15px;
+  position: relative;
+  border-radius: 0 5px 5px 0;
+}
+
+.speaker-topic i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  font-size: 1.25rem;
+}
+
+.speaker-topic p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 25px;
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
+# Enhanced Schedule Section
+--------------------------------------------------------------*/
+.schedule .nav-tabs {
+  border-radius: 50px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+  padding: 5px;
+  margin-bottom: 40px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.schedule .nav-tabs a {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  color: var(--default-color);
+  background-color: transparent;
+}
+
+.schedule .nav-tabs a.active {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: 0 5px 15px rgba(119, 36, 50, 0.2);
+}
+
+.schedule .sub-heading {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  padding: 12px 20px;
+  border-radius: 5px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.schedule .schedule-item {
+  position: relative;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 25px 0;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.schedule .schedule-item:hover {
+  background-color: color-mix(in srgb, var(--background-color), white 95%);
+}
+
+.schedule .schedule-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--accent-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.schedule .schedule-item:hover::before {
+  opacity: 1;
+}
+
+.schedule .schedule-item time {
+  display: block;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.schedule .schedule-item .speaker {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  float: left;
+  margin: 0 15px 15px 0;
+  border: 3px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+  transition: border-color 0.3s ease;
+}
+
+.schedule .schedule-item:hover .speaker {
+  border-color: var(--accent-color);
+}
+
+.schedule .schedule-item .speaker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.schedule .schedule-item h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.schedule .schedule-item:hover h4 {
+  color: var(--accent-color);
+}
+
+.schedule .schedule-item p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Enhanced Workshops Section
+--------------------------------------------------------------*/
+.workshops .workshop-category {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.workshops .workshop-category:hover {
+  transform: translateY(-5px);
+}
+
+.workshops .workshop-header {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.workshops .workshop-header i {
+  font-size: 2rem;
+}
+
+.workshops .workshop-header h3 {
+  margin: 0;
+  color: var(--contrast-color);
+  font-size: 1.5rem;
+}
+
+.workshops .workshop-list {
+  padding: 20px;
+}
+
+.workshops .workshop-item {
+  padding: 15px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  transition: background-color 0.3s ease;
+}
+
+.workshops .workshop-item:last-child {
+  border-bottom: none;
+}
+
+.workshops .workshop-item:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+}
+
+.workshops .workshop-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.workshops .workshop-time i {
+  color: var(--accent-color);
+}
+
+.workshops .workshop-time span {
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-weight: 600;
+}
+
+.workshops .workshop-item h4 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.workshops .workshop-item:hover h4 {
+  color: var(--accent-color);
+}
+
+.workshops .workshop-item p {
+  margin: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 0.9rem;
+}
