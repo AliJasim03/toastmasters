@@ -381,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .scrolled .header .navmenu a, .scrolled .header .navmenu a:focus {
-    color: var(--toastmasters-happy-yellow);
+    color: var(--toastmasters-black);
 }
 
 .scrolled .header .navmenu a:hover, .scrolled .header .navmenu .active > a {
@@ -932,8 +932,8 @@ section, .section {
 }
 
 .speaker-social a {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
     background: var(--accent-color);
     color: var(--toastmasters-loyal-blue);
     border-radius: 50%;
@@ -942,6 +942,11 @@ section, .section {
     justify-content: center;
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-size: 0.9rem;
+}
+
+.speaker-social a i {
+    font-size: 0.9rem; /* Adjust if your bi-* icons were controlled by parent */
 }
 
 .speaker-social a:hover {
@@ -951,7 +956,7 @@ section, .section {
 }
 
 .speaker-info {
-    padding: 25px;
+    padding: 20px;
     text-align: left;
 }
 
@@ -959,10 +964,10 @@ section, .section {
     display: inline-block;
     background: var(--accent-color);
     color: var(--toastmasters-loyal-blue);
-    font-size: 0.75rem;
-    padding: 5px 15px;
+    font-size: 0.7rem;
+    padding: 4px 12px;
     border-radius: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -970,16 +975,16 @@ section, .section {
 
 .speaker-info h4 {
     color: var(--heading-color);
-    margin: 0 0 8px;
-    font-size: 1.4rem;
+    margin-bottom: 6px;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
 .speaker-position {
     color: color-mix(in srgb, var(--default-color), transparent 20%);
     font-style: italic;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
 }
 
 .speaker-topic {
@@ -992,7 +997,7 @@ section, .section {
 
 .speaker-topic i.bi-quote {
     color: var(--accent-color);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     opacity: 0.7;
     position: absolute;
     top: 15px;
@@ -1001,12 +1006,12 @@ section, .section {
 
 .speaker-topic p {
     color: var(--default-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     margin: 0;
-    padding-left: 35px;
+    padding-left: 30px;
     font-style: italic;
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 /* Sponsors Section */
@@ -1199,6 +1204,7 @@ section, .section {
 }
 
 .workshops .workshop-category {
+    overflow: hidden;
     background: var(--surface-color);
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -2212,25 +2218,21 @@ body {
     }
 }
 
-You're asking what specific changes were made to the preloader CSS in my latest full CSS file. That's a good detail to check!
-
-                                                                                                    In the last comprehensive CSS file I provided, the preloader section was intended to be:
-
-    /*--------------------------------------------------------------
-    # Preloader (Original with brand accent)
-    --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Preloader (Original with brand accent)
+--------------------------------------------------------------*/
 #preloader {
-                                                                                                        position: fixed;
-                                                                                                        inset: 0;
-                                                                                                        z-index: 999999;
-                                                                                                        /* CHANGED: Explicitly set to a brand color, e.g., Loyal Blue for a full-screen brand experience */
-                                                                                                        background-color: var(--toastmasters-loyal-blue);
-                                                                                                        display: flex;
-                                                                                                        justify-content: center;
-                                                                                                        align-items: center;
-                                                                                                        opacity: 1;
-                                                                                                        transition: opacity 0.6s ease-out, visibility 0s linear 0.6s; /* Added visibility transition */
-                                                                                                    }
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    /* CHANGED: Explicitly set to a brand color, e.g., Loyal Blue for a full-screen brand experience */
+    background-color: var(--toastmasters-loyal-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.6s ease-out, visibility 0s linear 0.6s; /* Added visibility transition */
+}
 
 #preloader.loaded {
     opacity: 0;
@@ -2250,35 +2252,10 @@ You're asking what specific changes were made to the preloader CSS in my latest 
 }
 
 @keyframes preloader-spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
-
-Key Changes I made to the Preloader compared to your very first CSS:
-
-#preloader Background:
-
-Your original CSS for #preloader had background: var(--background-color);. This would make the preloader's background the same as the main page's initial background (likely white, as defined in :root).
-
-                                                                                                                                                                                                        I changed this to background-color: var(--toastmasters-loyal-blue);. This gives the full-screen preloader a strong brand color (Loyal Blue) while content is loading, which can be a nice branding touch.
-
-I also added a visibility transition to #preloader.loaded to better hide it.
-
-#preloader:before (the Spinner):
-
-Your original spinner track was border: 6px solid rgba(255, 255, 255, 0.2); (a semi-transparent white, good for a dark preloader background).
-
-                                                                                                                                            I changed this to border: 6px solid color-mix(in srgb, var(--toastmasters-white), transparent 80%);. This achieves a similar light track, suitable for the Loyal Blue background.
-
-Your original spinner active part was border-top-color: var(--accent-color); (which would have defaulted to True Maroon in my latest :root setup).
-
-                                                                                                                                                 I changed this to border-top-color: var(--toastmasters-happy-yellow);. This makes the spinning part of the loader the vibrant Happy Yellow, which stands out well against the Loyal Blue.
-
-In summary, the preloader was changed to:
-
-Have a Loyal Blue full-screen background.
-
-Have a spinner with a light track and a Happy Yellow active spinning segment.
-
-If this isn't what you're seeing, or if it's not working correctly, it's possible either this specific block got an error during one of the merges, or there's another CSS rule unintentionally affecting it. The block provided just above should be the correct and complete CSS for the preloader based on these intended brand color changes.
