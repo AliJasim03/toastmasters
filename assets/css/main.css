@@ -2259,3 +2259,303 @@ body {
         transform: rotate(360deg);
     }
 }
+/* Custom CSS for five-column layout */
+.col-lg-1-5 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 992px) {
+    .col-lg-1-5 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+/* Adjust spacing for smaller screens */
+@media (max-width: 991px) {
+    .speaker-info h4 {
+        font-size: 1.1rem;
+    }
+
+    .speaker-topic p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Enhanced Contact Section Styles */
+
+/* Contact card styling */
+.contact-card {
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid color-mix(in srgb, var(--toastmasters-white), transparent 80%);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon box styling */
+.contact-icon-box {
+    width: 56px;
+    height: 56px;
+    background: var(--accent-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.contact-icon-box i {
+    font-size: 1.8rem;
+    color: var(--toastmasters-white);
+}
+
+.contact-card:hover .contact-icon-box {
+    transform: scale(1.1);
+}
+
+/* Heading and text styling */
+.contact-card h4 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.contact-card p {
+    margin-bottom: 10px;
+    color: var(--default-color);
+    font-size: 0.95rem;
+}
+
+/* Link styling */
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-color);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-link i {
+    margin-right: 6px;
+    transition: transform 0.3s ease;
+}
+
+.btn-link:hover {
+    color: color-mix(in srgb, var(--accent-color), var(--toastmasters-white) 30%);
+}
+
+.btn-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Larger social links */
+.social-links-lg {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links-lg a {
+    width: 54px;
+    height: 54px;
+    background: color-mix(in srgb, var(--accent-color), transparent 80%);
+    color: var(--toastmasters-white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-links-lg a i {
+    font-size: 1.5rem;
+}
+
+.social-links-lg a:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px) rotate(5deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Response badge */
+.response-badge {
+    background-color: color-mix(in srgb, var(--toastmasters-loyal-blue), transparent 85%);
+    color: var(--toastmasters-white);
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.response-badge i {
+    color: var(--toastmasters-happy-yellow);
+}
+
+/* Quick links section */
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.quick-link-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--toastmasters-true-maroon);
+    color: var(--toastmasters-white);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.quick-link-btn i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.quick-link-btn:hover {
+    background-color: var(--toastmasters-happy-yellow);
+    color: var(--toastmasters-loyal-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px color-mix(in srgb, var(--toastmasters-happy-yellow), transparent 70%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .social-links-lg {
+        gap: 15px;
+    }
+
+    .social-links-lg a {
+        width: 48px;
+        height: 48px;
+    }
+
+    .quick-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-link-btn {
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+/* Conference Roles Section Custom Styling */
+#contest-roles .info-item {
+    background-color: var(--toastmasters-white);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    padding: 40px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--toastmasters-cool-gray);
+}
+
+#contest-roles .info-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+#contest-roles .info-item i {
+    width: 70px;
+    height: 70px;
+    background: var(--toastmasters-true-maroon);
+    color: var(--toastmasters-white);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(119, 36, 50, 0.2);
+}
+
+#contest-roles .info-item:hover i {
+    background: var(--toastmasters-happy-yellow);
+    color: var(--toastmasters-loyal-blue);
+    transform: scale(1.1) rotate(10deg);
+}
+
+#contest-roles .info-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--toastmasters-loyal-blue);
+    font-weight: 700;
+}
+
+#contest-roles .info-item p {
+    color: var(--default-color);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+#contest-roles .contest-roles-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: var(--toastmasters-true-maroon);
+    border: 2px solid var(--toastmasters-true-maroon);
+    color: var(--toastmasters-white);
+    box-shadow: 0 6px 15px rgba(119, 36, 50, 0.25);
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+#contest-roles .contest-roles-btn:hover {
+    background-color: var(--toastmasters-loyal-blue);
+    border-color: var(--toastmasters-loyal-blue);
+    box-shadow: 0 8px 20px rgba(0, 65, 101, 0.3);
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #contest-roles .info-item {
+        padding: 30px 20px;
+    }
+
+    #contest-roles .info-item i {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+
+    #contest-roles .info-item h3 {
+        font-size: 1.3rem;
+    }
+}
+
+.gray-background{
+    background-color: var(--toastmasters-fair-gray) !important;
+}
