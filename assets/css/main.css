@@ -2559,3 +2559,268 @@ body {
 .gray-background{
     background-color: var(--toastmasters-fair-gray) !important;
 }
+
+/*arabic*/
+.language-switcher {
+    margin-left: 15px;
+}
+
+.language-switcher .lang-toggle {
+    color: var(--toastmasters-white);
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.language-switcher .lang-toggle.active {
+    color: var(--toastmasters-happy-yellow);
+    font-weight: 700;
+}
+
+.language-switcher .lang-toggle:hover {
+    color: var(--toastmasters-happy-yellow);
+}
+
+/* RTL Support */
+[dir="rtl"] .header .logo {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+[dir="rtl"] .schedule .schedule-item::before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .footer h4::after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .schedule .schedule-item .speaker {
+    float: right;
+    margin: 0 0 8px 18px;
+}
+
+html[dir="rtl"] .section-title h2:after {
+    right: 50%;
+    left: auto;
+    transform: translateX(50%);
+}
+
+
+
+/* Import RB font family - add this to your main.css file */
+@font-face {
+    font-family: 'RB';
+    src: url('../fonts/RB-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RB';
+    src: url('../fonts/RB-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RB';
+    src: url('../fonts/RB-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RB';
+    src: url('../fonts/RB-Regular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Update root variables to use RB font */
+:root {
+    /* Fonts - replace Tajawal with RB */
+    --default-font: "RB", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --heading-font: "RB", sans-serif;
+    --nav-font: "RB", sans-serif;
+
+    /* For Arabic text */
+    --arabic-font: "RB", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Arabic-specific font styling */
+html[lang="ar"] {
+    --default-font: var(--arabic-font);
+    --heading-font: var(--arabic-font);
+    --nav-font: var(--arabic-font);
+}
+
+html[lang="ar"] body {
+    font-family: var(--default-font);
+    line-height: 1.7; /* Slightly increased line height for Arabic */
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+    font-family: var(--heading-font);
+}
+
+/* RTL Support */
+[dir="rtl"] .header .logo {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+[dir="rtl"] .schedule .schedule-item::before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .footer h4::after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .schedule .schedule-item .speaker {
+    float: right;
+    margin: 0 0 8px 18px;
+}
+
+html[dir="rtl"] .section-title h2:after {
+    right: 50%;
+    left: auto;
+    transform: translateX(50%);
+}
+
+/* Language switcher styling */
+.language-switcher {
+    margin-left: 15px;
+}
+
+.language-switcher .lang-toggle {
+    color: var(--toastmasters-white);
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.language-switcher .lang-toggle.active {
+    color: var(--toastmasters-happy-yellow);
+    font-weight: 700;
+}
+
+.language-switcher .lang-toggle:hover {
+    color: var(--toastmasters-happy-yellow);
+}
+
+/* RTL Border Adjustments for Sponsors Section */
+
+/* For the sponsor wrapper */
+[dir="rtl"] #sponsors .clients-wrap {
+    border-top: 1px solid var(--toastmasters-cool-gray);
+    border-right: 1px solid var(--toastmasters-cool-gray); /* Changed from border-left */
+    border-left: none; /* Remove original left border */
+    background-color: var(--toastmasters-white);
+}
+
+/* For the individual client logos */
+[dir="rtl"] #sponsors .client-logo {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--toastmasters-cool-gray); /* Changed from border-right */
+    border-right: none; /* Remove original right border */
+    border-bottom: 1px solid var(--toastmasters-cool-gray);
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* Additional RTL adjustments for other elements */
+
+/* Schedule item speaker image positioning */
+[dir="rtl"] .schedule .schedule-item .speaker {
+    float: right;
+    margin: 0 0 8px 18px; /* Changed margin from "0 18px 8px 0" to "0 0 8px 18px" */
+}
+
+/* Footer section after element positioning */
+[dir="rtl"] .footer h4::after {
+    left: auto;
+    right: 0;
+}
+
+/* Section title underline positioning */
+[dir="rtl"] .section-title h2:after {
+    right: 50%;
+    left: auto;
+    transform: translateX(50%);
+}
+
+/* Contact icon box in RTL mode */
+[dir="rtl"] .contact-icon-box {
+    margin-right: 0;
+    margin-left: 15px; /* Add margin to left instead of right */
+}
+
+/* Fix bootstrap column order in RTL */
+@media (min-width: 768px) {
+    [dir="rtl"] .offset-md-1 {
+        margin-right: 8.333333%; /* Original: margin-left */
+        margin-left: 0;
+    }
+}
+
+/* Fix schedule item sidebar */
+[dir="rtl"] .schedule .schedule-item::before {
+    left: auto;
+    right: 0;
+}
+
+/* Fix other RTL layout issues */
+[dir="rtl"] .me-3 {
+    margin-right: 0 !important;
+    margin-left: 1rem !important; /* Bootstrap me-3 equivalent in RTL */
+}
+
+[dir="rtl"] .ms-3 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important; /* Bootstrap ms-3 equivalent in RTL */
+}
+
+[dir="rtl"] .me-auto {
+    margin-right: 0 !important;
+    margin-left: auto !important; /* Bootstrap me-auto equivalent in RTL */
+}
+
+/* Fix language switcher positioning in RTL */
+[dir="rtl"] .language-switcher {
+    margin-right: 0px;
+    margin-left:  15px !important;
+}
+
+/* Fix icon positions in RTL mode */
+[dir="rtl"] .btn-link i,
+[dir="rtl"] .quick-link-btn i {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Fix list styles in RTL */
+[dir="rtl"] ul {
+    padding-right: 0;
+}
+
+/* Fix workshop time icon position */
+[dir="rtl"] .workshop-time i {
+    margin-right: 0;
+    margin-left: 10px;
+}

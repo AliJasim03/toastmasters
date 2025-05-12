@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <!-- Character Set and Viewport -->
@@ -53,6 +53,61 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+    <!-- Language Switcher Styles -->
+    <style>
+        .language-switcher {
+            margin-left: 15px;
+        }
+
+        .language-switcher .lang-toggle {
+            color: var(--toastmasters-white);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .language-switcher .lang-toggle.active {
+            color: var(--toastmasters-happy-yellow);
+            font-weight: 700;
+        }
+
+        .language-switcher .lang-toggle:hover {
+            color: var(--toastmasters-happy-yellow);
+        }
+
+        /* RTL Support */
+        [dir="rtl"] .header .logo {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        [dir="rtl"] .schedule .schedule-item::before {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .footer h4::after {
+            left: auto;
+            right: 0;
+        }
+
+        [dir="rtl"] .schedule .schedule-item .speaker {
+            float: right;
+            margin: 0 0 8px 18px;
+        }
+
+        html[dir="rtl"] .section-title h2:after {
+            right: 50%;
+            left: auto;
+            transform: translateX(50%);
+        }
+
+        /* Hide all Arabic content by default */
+        .ar-content {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="index-page">
@@ -65,17 +120,21 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#speakers">Speakers</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#venue">Venue</a></li>
-                <li><a href="#contest-roles">Conference Roles</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero" class="active" data-i18n="home">Home</a></li>
+                <li><a href="#speakers" data-i18n="speakers">Speakers</a></li>
+                <li><a href="#schedule" data-i18n="schedule">Schedule</a></li>
+                <li><a href="#venue" data-i18n="venue">Venue</a></li>
+                <li><a href="#contest-roles" data-i18n="conference-roles">Conference Roles</a></li>
+                <li><a href="#contact" data-i18n="contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-
-        <a class="cta-btn d-none d-sm-block" href="#buy-tickets">Register Now</a>
+        <div class="language-switcher d-flex align-items-center ms-3">
+            <a href="#" class="lang-toggle active" data-lang="en">EN</a>
+            <span class="mx-2">|</span>
+            <a href="#" class="lang-toggle" data-lang="ar">العربية</a>
+        </div>
+        <a class="cta-btn d-none d-sm-block" href="#buy-tickets" data-i18n="register-now">Register Now</a>
     </div>
 </header>
 
@@ -88,11 +147,14 @@
 
         <div class="container d-flex flex-column align-items-center text-center mt-auto">
             <h2 data-aos="fade-up" data-aos-delay="100">
-                District 20 Toastmasters Annual Conference<br>
-                <span>ECHOES OF EXCELLENCE</span>
+                <span class="en-content">District 20 Toastmasters Annual Conference<br>
+                <span>ECHOES OF EXCELLENCE</span></span>
+                <span class="ar-content">مؤتمر التوستماسترز السنوي للمنطقة 20<br>
+                <span>صدى التميز</span></span>
             </h2>
             <p data-aos="fade-up" data-aos-delay="200">
-                22-24 May at the Crowne Plaza Conference Center, Kingdom of Bahrain
+                <span class="en-content">22-24 May at the Crowne Plaza Conference Center, Kingdom of Bahrain</span>
+                <span class="ar-content">22-24 مايو في مركز مؤتمرات كراون بلازا، مملكة البحرين</span>
             </p>
             <div data-aos="fade-up" data-aos-delay="300">
                 <a href="https://www.youtube.com/watch?v=cFX64zxS60o" class="glightbox pulsating-play-btn mt-3"></a>
@@ -103,19 +165,28 @@
             <div class="container position-relative" data-aos="fade-up">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h2>About The DTAC 2025 Conference</h2>
-                        <p>The DTAC 2025 Conference is a celebration of public speaking excellence, where
+                        <h2 data-i18n="about-conference">About The DTAC 2025 Conference</h2>
+                        <p data-i18n="conference-description">
+                            <span class="en-content">The DTAC 2025 Conference is a celebration of public speaking excellence, where
                             participants showcase their oratory skills and leadership potential. The event brings
                             together passionate speakers, mentors, and audiences, fostering a community of growth and
-                            inspiration.</p>
+                            inspiration.</span>
+                            <span class="ar-content">مؤتمر DTAC 2025 هو احتفال بالتميز في الخطابة العامة، حيث يعرض المشاركون مهاراتهم الخطابية وإمكاناتهم القيادية. يجمع الحدث المتحدثين المتحمسين والموجهين والجماهير، مما يعزز مجتمعًا من النمو والإلهام.</span>
+                        </p>
                     </div>
                     <div class="col-lg-2">
-                        <h3 style="text-transform: unset">Where</h3>
-                        <p>Kingdom of Bahrain</p>
+                        <h3 style="text-transform: unset" data-i18n="where">Where</h3>
+                        <p>
+                            <span class="en-content">Kingdom of Bahrain</span>
+                            <span class="ar-content">مملكة البحرين</span>
+                        </p>
                     </div>
                     <div class="col-lg-2">
-                        <h3 style="text-transform: unset">When</h3>
-                        <p>Thursday to Saturday<br>22-24 May</p>
+                        <h3 style="text-transform: unset" data-i18n="when">When</h3>
+                        <p>
+                            <span class="en-content">Thursday to Saturday<br>22-24 May</span>
+                            <span class="ar-content">الخميس إلى السبت<br>22-24 مايو</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -125,9 +196,12 @@
     <!-- Sponsors Section -->
     <section id="sponsors" class="sponsors section light-background">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Sponsors</h2>
-            <p>We thank our esteemed sponsors whose generous support makes DTAC 2025 possible. Their commitment to
-                excellence in communication and leadership development helps enrich our community.</p>
+            <h2 data-i18n="sponsors">Sponsors</h2>
+            <p data-i18n="sponsors-desc">
+                <span class="en-content">We thank our esteemed sponsors whose generous support makes DTAC 2025 possible. Their commitment to
+                excellence in communication and leadership development helps enrich our community.</span>
+                <span class="ar-content">نشكر رعاتنا المحترمين الذين يجعلون مؤتمر DTAC 2025 ممكنًا بدعمهم السخي. إن التزامهم بالتميز في التواصل وتطوير القيادة يساعد على إثراء مجتمعنا.</span>
+            </p>
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -161,8 +235,11 @@
     <!-- Featured Speakers Section -->
     <section id="speakers" class="speakers section">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Featured Speakers</h2>
-            <p>Discover thought leaders and expert communicators who will inspire and empower you</p>
+            <h2 data-i18n="speakers">Speakers</h2>
+            <p data-i18n="speakers-desc">
+                <span class="en-content">Discover thought leaders and expert communicators who will inspire and empower you</span>
+                <span class="ar-content">اكتشف قادة الفكر والمتحدثين الخبراء الذين سيلهمونك ويمكنونك</span>
+            </p>
         </div>
 
         <div class="container">
@@ -174,19 +251,24 @@
                         <div class="speaker-image">
                             <img src="assets/img/speakers/Suhail-Algosaibi.jpg" class="img-fluid"
                                  alt="Suhail Bin Ghazi Al Gosaibi">
-<!--                            <div class="speaker-social">-->
-<!--                                <a href="#"><i class="bi bi-linkedin"></i></a>-->
-<!--                                <a href="#"><i class="bi bi-twitter"></i></a>-->
-<!--                            </div>-->
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Featured Speaker</span>
+                            <span class="speaker-role" data-i18n="featured-speaker">
+                                <span class="en-content">Featured Speaker</span>
+                                <span class="ar-content">متحدث مميز</span>
+                            </span>
                             <h4>Suhail Bin Ghazi Al Gosaibi</h4>
-                            <p class="speaker-position">Business Leader & Innovator</p>
+                            <p class="speaker-position">
+                                <span class="en-content">Business Leader & Innovator</span>
+                                <span class="ar-content">قائد أعمال ومبتكر</span>
+                            </p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>The Secrets of Transformational Leadership:<br>From Cultivating Culture to Inspiring
-                                    Innovation</p>
+                                <p>
+                                    <span class="en-content">The Secrets of Transformational Leadership:<br>From Cultivating Culture to Inspiring
+                                    Innovation</span>
+                                    <span class="ar-content">أسرار القيادة التحويلية:<br>من زراعة الثقافة إلى إلهام الابتكار</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -197,22 +279,30 @@
                     <div class="speaker-profile">
                         <div class="speaker-image">
                             <img src="assets/img/speakers/Mohamed-Shukri.jpg" class="img-fluid" alt="Mohamed Shukri">
-<!--                            <div class="speaker-social">-->
-<!--                                <a href="#"><i class="bi bi-linkedin"></i></a>-->
-<!--                                <a href="#"><i class="bi bi-twitter"></i></a>-->
-<!--                            </div>-->
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Keynote Speaker</span>
+                            <span class="speaker-role" data-i18n="keynote-speaker">
+                                <span class="en-content">Keynote Speaker</span>
+                                <span class="ar-content">المتحدث الرئيسي</span>
+                            </span>
                             <h4>Mohamed Shukri, DTM</h4>
-                            <p class="speaker-position">Founder & CEO - Y Access Training Solutions</p>
+                            <p class="speaker-position">
+                                <span class="en-content">Founder & CEO - Y Access Training Solutions</span>
+                                <span class="ar-content">المؤسس والرئيس التنفيذي - حلول تدريب واي أكسس</span>
+                            </p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>Why Me? Don't be chosen. Be chased.</p>
+                                <p>
+                                    <span class="en-content">Why Me? Don't be chosen. Be chased.</span>
+                                    <span class="ar-content">لماذا أنا؟ لا تكن مختارًا. كن مطاردًا.</span>
+                                </p>
                             </div>
                             <div class="speaker-topic mt-3">
                                 <i class="bi bi-quote"></i>
-                                <p>How to become the world's number one speaker?</p>
+                                <p>
+                                    <span class="en-content">How to become the world's number one speaker?</span>
+                                    <span class="ar-content">كيف تصبح المتحدث رقم واحد في العالم؟</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -223,18 +313,23 @@
                     <div class="speaker-profile">
                         <div class="speaker-image">
                             <img src="assets/img/speakers/Mohamed-Isa.jpg" class="img-fluid" alt="Mohamed Isa">
-<!--                            <div class="speaker-social">-->
-<!--                                <a href="#"><i class="bi bi-linkedin"></i></a>-->
-<!--                                <a href="#"><i class="bi bi-twitter"></i></a>-->
-<!--                            </div>-->
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Keynote Speaker</span>
+                            <span class="speaker-role" data-i18n="keynote-speaker">
+                                <span class="en-content">Keynote Speaker</span>
+                                <span class="ar-content">المتحدث الرئيسي</span>
+                            </span>
                             <h4>Mohamed Isa, DTM</h4>
-                            <p class="speaker-position">Distinguished Toastmaster</p>
+                            <p class="speaker-position">
+                                <span class="en-content">Distinguished Toastmaster</span>
+                                <span class="ar-content">التوستماسترز المتميز</span>
+                            </p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>Everest Leadership</p>
+                                <p>
+                                    <span class="en-content">Everest Leadership</span>
+                                    <span class="ar-content">قيادة إيفرست</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -246,18 +341,23 @@
                     <div class="speaker-profile">
                         <div class="speaker-image">
                             <img src="assets/img/speakers/Wafaa-Salman.jpg" class="img-fluid" alt="Wafaa Salman">
-                            <!-- UPDATE IMAGE PATH -->
                             <div class="speaker-social">
                                 <!-- Add social links if available -->
                             </div>
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Featured Speaker</span>
+                            <span class="speaker-role" data-i18n="featured-speaker">
+                                <span class="en-content">Featured Speaker</span>
+                                <span class="ar-content">متحدث مميز</span>
+                            </span>
                             <h4>Wafaa Salman, DTM</h4>
                             <p class="speaker-position">التوستماسترز المتميز وفاء سلمان</p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>Employee Wellbeing & Happiness</p>
+                                <p>
+                                    <span class="en-content">Employee Wellbeing & Happiness</span>
+                                    <span class="ar-content">رفاهية وسعادة الموظفين</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -278,12 +378,18 @@
                             </div>
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Featured Speaker</span>
+                            <span class="speaker-role" data-i18n="featured-speaker">
+                                <span class="en-content">Featured Speaker</span>
+                                <span class="ar-content">متحدث مميز</span>
+                            </span>
                             <h4>Dr. Osama Bahar</h4>
                             <p class="speaker-position">الدكتور أسامة بحر</p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>The Frequently Asked Question: AM I a Leader</p>
+                                <p>
+                                    <span class="en-content">The Frequently Asked Question: AM I a Leader</span>
+                                    <span class="ar-content">السؤال المتكرر: هل أنا قائد</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -299,12 +405,18 @@
                             </div>
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Featured Speaker</span>
+                            <span class="speaker-role" data-i18n="featured-speaker">
+                                <span class="en-content">Featured Speaker</span>
+                                <span class="ar-content">متحدث مميز</span>
+                            </span>
                             <h4>Kamal Al Shehabi, DTM</h4>
                             <p class="speaker-position">التوستماسترز المتميز كمال الشهابي</p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>Who said "You have to be Rich" to invest?</p>
+                                <p>
+                                    <span class="en-content">Who said "You have to be Rich" to invest?</span>
+                                    <span class="ar-content">من قال "يجب أن تكون ثرياً" للاستثمار؟</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -320,13 +432,18 @@
                             </div>
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Featured Speaker</span>
+                            <span class="speaker-role" data-i18n="featured-speaker">
+                                <span class="en-content">Featured Speaker</span>
+                                <span class="ar-content">متحدث مميز</span>
+                            </span>
                             <h4>Neena Wilson, DTM</h4>
                             <p class="speaker-position">التوستماسترز المتميز نينا ويلسون</p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>Bridging Generations: Effective Communication Strategies between Adults &
-                                    Children</p>
+                                <p>
+                                    <span class="en-content">Bridging Generations: Effective Communication Strategies between Adults & Children</span>
+                                    <span class="ar-content">سد الفجوة بين الأجيال: استراتيجيات التواصل الفعال بين البالغين والأطفال</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -342,12 +459,18 @@
                             </div>
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Featured Speaker</span>
+                            <span class="speaker-role" data-i18n="featured-speaker">
+                                <span class="en-content">Featured Speaker</span>
+                                <span class="ar-content">متحدث مميز</span>
+                            </span>
                             <h4>Khurram Salman, DTM</h4>
                             <p class="speaker-position">التوستماسترز المتميز خرم سلمان</p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>Personal Branding with LinkedIn</p>
+                                <p>
+                                    <span class="en-content">Personal Branding with LinkedIn</span>
+                                    <span class="ar-content">العلامة التجارية الشخصية مع لينكد إن</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -363,12 +486,18 @@
                             </div>
                         </div>
                         <div class="speaker-info">
-                            <span class="speaker-role">Featured Speaker</span>
+                            <span class="speaker-role" data-i18n="featured-speaker">
+                                <span class="en-content">Featured Speaker</span>
+                                <span class="ar-content">متحدث مميز</span>
+                            </span>
                             <h4>Sheikha Al Shaiba</h4>
                             <p class="speaker-position">السيدة شيخة الشيبة</p>
                             <div class="speaker-topic">
                                 <i class="bi bi-quote"></i>
-                                <p>The Power of Resilience</p>
+                                <p>
+                                    <span class="en-content">The Power of Resilience</span>
+                                    <span class="ar-content">قوة المرونة</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -382,35 +511,59 @@
     <!-- Schedule Section -->
     <section id="schedule" class="schedule section">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Event Schedule</h2>
-            <p>Discover the exciting lineup of speeches, workshops, and activities at DTAC 2025</p>
+            <h2 data-i18n="schedule">
+                <span class="en-content">Schedule</span>
+                <span class="ar-content">جدول الأعمال</span>
+            </h2>
+            <p data-i18n="schedule-desc">
+                <span class="en-content">Discover the exciting lineup of speeches, workshops, and activities at DTAC 2025</span>
+                <span class="ar-content">اكتشف المجموعة المثيرة من الخطابات وورش العمل والأنشطة في DTAC 2025</span>
+            </p>
         </div>
 
         <div class="container">
             <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Day 1: Thursday</a>
+                    <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">
+                        <span class="en-content">Day 1: Thursday</span>
+                        <span class="ar-content">اليوم الأول: الخميس</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Day 2: Friday</a>
+                    <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">
+                        <span class="en-content">Day 2: Friday</span>
+                        <span class="ar-content">اليوم الثاني: الجمعة</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Day 3: Saturday</a>
+                    <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">
+                        <span class="en-content">Day 3: Saturday</span>
+                        <span class="ar-content">اليوم الثالث: السبت</span>
+                    </a>
                 </li>
             </ul>
 
             <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
                 <!-- Day 1 Schedule -->
                 <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-                    <h3 class="sub-heading">Thursday, 22nd May 2025</h3>
+                    <h3 class="sub-heading">
+                        <span class="en-content">Thursday, 22nd May 2025</span>
+                        <span class="ar-content">الخميس، 22 مايو 2025</span>
+                    </h3>
 
                     <div class="row schedule-item">
                         <div class="col-md-2">
                             <time>6:30 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Opening & Welcome</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Opening & Welcome</span>
+                                <span class="ar-content">الافتتاح والترحيب</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -419,8 +572,14 @@
                             <time>6:35 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>MC Introduction</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">MC Introduction</span>
+                                <span class="ar-content">تقديم المنسق</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -432,7 +591,10 @@
                             <div class="speaker">
                                 <img src="assets/img/agenda/yunus-abdulaal.jpeg" alt="DTM Yunus Abdulaal">
                             </div>
-                            <h4>DTAC Chair Opening Address</h4>
+                            <h4>
+                                <span class="en-content">DTAC Chair Opening Address</span>
+                                <span class="ar-content">كلمة افتتاحية من رئيس DTAC</span>
+                            </h4>
                             <p>DTM Yunus Abdulaal</p>
                         </div>
                     </div>
@@ -445,7 +607,10 @@
                             <div class="speaker">
                                 <img src="assets/img/agenda/yaser-alqashar.jpg" alt="DTM Yaser Alqashar">
                             </div>
-                            <h4>District 20 Director Address</h4>
+                            <h4>
+                                <span class="en-content">District 20 Director Address</span>
+                                <span class="ar-content">كلمة مدير المنطقة 20</span>
+                            </h4>
                             <p>DTM Yaser Alqashar</p>
                         </div>
                     </div>
@@ -455,7 +620,10 @@
                             <time>7:00 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Address by Patron</h4>
+                            <h4>
+                                <span class="en-content">Address by Patron</span>
+                                <span class="ar-content">كلمة الراعي</span>
+                            </h4>
                             <p>HH Shaikh Isa bin Salman bin Hamad Al Khalifa</p>
                         </div>
                     </div>
@@ -468,7 +636,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/Suhail-Algosaibi.jpg" alt="Suhail Ghazi Algosaibi">
                             </div>
-                            <h4>The Secrets of Transformational Leadership</h4>
+                            <h4>
+                                <span class="en-content">The Secrets of Transformational Leadership</span>
+                                <span class="ar-content">أسرار القيادة التحويلية</span>
+                            </h4>
                             <p>Suhail Ghazi Algosaibi</p>
                         </div>
                     </div>
@@ -481,7 +652,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/Mohamed-Shukri.jpg" alt="DTM Mohamed Shukri">
                             </div>
-                            <h4>Why Me? Don't be chosen. Be chased.</h4>
+                            <h4>
+                                <span class="en-content">Why Me? Don't be chosen. Be chased.</span>
+                                <span class="ar-content">لماذا أنا؟ لا تكن مختارًا. كن مطاردًا.</span>
+                            </h4>
                             <p>DTM Mohamed Shukri</p>
                         </div>
                     </div>
@@ -494,7 +668,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/Sheikha-Al-Shaiba.jpg" alt="Sheikha Al Shaiba">
                             </div>
-                            <h4>The Power of Resilience</h4>
+                            <h4>
+                                <span class="en-content">The Power of Resilience</span>
+                                <span class="ar-content">قوة المرونة</span>
+                            </h4>
                             <p>Sheikha Al Shaiba</p>
                         </div>
                     </div>
@@ -504,8 +681,14 @@
                             <time>8:20 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>District 20 Special Recognition Ceremony</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">District 20 Special Recognition Ceremony</span>
+                                <span class="ar-content">حفل التكريم الخاص للمنطقة 20</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -514,22 +697,34 @@
                             <time>8:45 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Group Photo and Dinner with Entertainment</h4>
+                            <h4>
+                                <span class="en-content">Group Photo and Dinner with Entertainment</span>
+                                <span class="ar-content">صورة جماعية وعشاء مع فقرات ترفيهية</span>
+                            </h4>
                         </div>
                     </div>
                 </div>
 
                 <!-- Day 2 Schedule -->
                 <div role="tabpanel" class="col-lg-9 tab-pane fade" id="day-2">
-                    <h3 class="sub-heading">Friday, 23rd May 2025 - Morning Session (English)</h3>
+                    <h3 class="sub-heading">
+                        <span class="en-content">Friday, 23rd May 2025 - Morning Session (English)</span>
+                        <span class="ar-content">الجمعة، 23 مايو 2025 - الجلسة الصباحية (الإنجليزية)</span>
+                    </h3>
 
                     <div class="row schedule-item">
                         <div class="col-md-2">
                             <time>7:50 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Call to Order</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Call to Order</span>
+                                <span class="ar-content">دعوة للنظام</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -541,7 +736,10 @@
                             <div class="speaker">
                                 <img src="assets/img/agenda/jahangir-khan.jpg" alt="DTM Jahangir Khan">
                             </div>
-                            <h4>DTAC Vice Chair 1 Opening Address</h4>
+                            <h4>
+                                <span class="en-content">DTAC Vice Chair 1 Opening Address</span>
+                                <span class="ar-content">كلمة افتتاحية من نائب رئيس DTAC الأول</span>
+                            </h4>
                             <p>DTM Jahangir Khan</p>
                         </div>
                     </div>
@@ -551,8 +749,14 @@
                             <time>8:10 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Banner March</h4>
-                            <p>All Concerned</p>
+                            <h4>
+                                <span class="en-content">Banner March</span>
+                                <span class="ar-content">مسيرة الرايات</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">All Concerned</span>
+                                <span class="ar-content">جميع المعنيين</span>
+                            </p>
                         </div>
                     </div>
 
@@ -561,7 +765,10 @@
                             <time>8:40 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Entertainment Scoop – Audience Engagement Activity</h4>
+                            <h4>
+                                <span class="en-content">Entertainment Scoop – Audience Engagement Activity</span>
+                                <span class="ar-content">فقرة ترفيهية - نشاط تفاعلي مع الجمهور</span>
+                            </h4>
                             <p>TM</p>
                         </div>
                     </div>
@@ -574,7 +781,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/mohamed-isa.jpg" alt="Mohamed Isa">
                             </div>
-                            <h4>Keynote Speech – "Everest Leadership"</h4>
+                            <h4>
+                                <span class="en-content">Keynote Speech – "Everest Leadership"</span>
+                                <span class="ar-content">الكلمة الرئيسية - "قيادة إيفرست"</span>
+                            </h4>
                             <p>Mohamed Isa</p>
                         </div>
                     </div>
@@ -584,7 +794,10 @@
                             <time>9:40 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Evaluation Speech Contest (English)</h4>
+                            <h4>
+                                <span class="en-content">Evaluation Speech Contest (English)</span>
+                                <span class="ar-content">مسابقة خطابات التقييم (الإنجليزية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -593,8 +806,14 @@
                             <time>11:00 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Emcee Transition / New MC Takes Over</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Emcee Transition / New MC Takes Over</span>
+                                <span class="ar-content">تغيير المنسق / تولي منسق جديد</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -606,7 +825,10 @@
                             <div class="speaker">
                                 <img src="assets/img/agenda/mona-aloqab.jpg" alt="DTM Mona Aloqab">
                             </div>
-                            <h4>IPDD Awards 2023 – 2024 Announcements</h4>
+                            <h4>
+                                <span class="en-content">IPDD Awards 2023 – 2024 Announcements</span>
+                                <span class="ar-content">إعلان جوائز IPDD 2023 - 2024</span>
+                            </h4>
                             <p>DTM Mona Aloqab</p>
                         </div>
                     </div>
@@ -616,7 +838,10 @@
                             <time>11:20 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Souvenir Launch</h4>
+                            <h4>
+                                <span class="en-content">Souvenir Launch</span>
+                                <span class="ar-content">إطلاق الهدايا التذكارية</span>
+                            </h4>
                             <p>TM</p>
                         </div>
                     </div>
@@ -626,8 +851,14 @@
                             <time>11:28 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Recognition of Role Players and Support Teams (Part 1)</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Recognition of Role Players and Support Teams (Part 1)</span>
+                                <span class="ar-content">تكريم المساهمين وفرق الدعم (الجزء 1)</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -636,7 +867,10 @@
                             <time>11:45 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Break for Prayer & Lunch</h4>
+                            <h4>
+                                <span class="en-content">Break for Prayer & Lunch</span>
+                                <span class="ar-content">استراحة للصلاة والغداء</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -645,7 +879,10 @@
                             <time>1:20 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Humorous Speech Contest (English)</h4>
+                            <h4>
+                                <span class="en-content">Humorous Speech Contest (English)</span>
+                                <span class="ar-content">مسابقة الخطابات الفكاهية (الإنجليزية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -654,8 +891,14 @@
                             <time>3:00 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Recognition of Role Players and Support Teams (Part 2)</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Recognition of Role Players and Support Teams (Part 2)</span>
+                                <span class="ar-content">تكريم المساهمين وفرق الدعم (الجزء 2)</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -664,19 +907,31 @@
                             <time>3:15 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Program Adjourned (English)</h4>
+                            <h4>
+                                <span class="en-content">Program Adjourned (English)</span>
+                                <span class="ar-content">انتهاء البرنامج (الإنجليزي)</span>
+                            </h4>
                         </div>
                     </div>
 
-                    <h3 class="sub-heading mt-5">Friday, 23rd May 2025 - Afternoon Session (Arabic)</h3>
+                    <h3 class="sub-heading mt-5">
+                        <span class="en-content">Friday, 23rd May 2025 - Afternoon Session (Arabic)</span>
+                        <span class="ar-content">الجمعة، 23 مايو 2025 - الجلسة المسائية (العربية)</span>
+                    </h3>
 
                     <div class="row schedule-item">
                         <div class="col-md-2">
                             <time>4:15 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Call to Order</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Call to Order</span>
+                                <span class="ar-content">دعوة للنظام</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -688,7 +943,10 @@
                             <div class="speaker">
                                 <img src="assets/img/agenda/lulwa-al-maeeli.jpg" alt="DTM Lulwa Isa Al Maeeli">
                             </div>
-                            <h4>Welcome Address (Vice Chair 2)</h4>
+                            <h4>
+                                <span class="en-content">Welcome Address (Vice Chair 2)</span>
+                                <span class="ar-content">كلمة الترحيب (نائب الرئيس 2)</span>
+                            </h4>
                             <p>DTM Lulwa Isa Al Maeeli</p>
                         </div>
                     </div>
@@ -698,7 +956,10 @@
                             <time>4:32 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Entertainment Scoop – Audience Engagement Activity</h4>
+                            <h4>
+                                <span class="en-content">Entertainment Scoop – Audience Engagement Activity</span>
+                                <span class="ar-content">فقرة ترفيهية - نشاط تفاعلي مع الجمهور</span>
+                            </h4>
                             <p>TM</p>
                         </div>
                     </div>
@@ -708,7 +969,10 @@
                             <time>4:50 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Evaluation Speech Contest (Arabic)</h4>
+                            <h4>
+                                <span class="en-content">Evaluation Speech Contest (Arabic)</span>
+                                <span class="ar-content">مسابقة خطابات التقييم (العربية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -717,7 +981,10 @@
                             <time>6:05 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Prayer break</h4>
+                            <h4>
+                                <span class="en-content">Prayer break</span>
+                                <span class="ar-content">استراحة الصلاة</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -729,7 +996,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/Mohamed-Shukri.jpg" alt="DTM Mohamed Shukri">
                             </div>
-                            <h4>Keynote Speech (Arabic)</h4>
+                            <h4>
+                                <span class="en-content">Keynote Speech (Arabic)</span>
+                                <span class="ar-content">الكلمة الرئيسية (العربية)</span>
+                            </h4>
                             <p>DTM Mohamed Shukri</p>
                         </div>
                     </div>
@@ -739,7 +1009,10 @@
                             <time>7:05 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Humorous Speech Contest (Arabic)</h4>
+                            <h4>
+                                <span class="en-content">Humorous Speech Contest (Arabic)</span>
+                                <span class="ar-content">مسابقة الخطابات الفكاهية (العربية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -748,8 +1021,14 @@
                             <time>8:45 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Recognition of Role Players and Support Teams (Part 3)</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Recognition of Role Players and Support Teams (Part 3)</span>
+                                <span class="ar-content">تكريم المساهمين وفرق الدعم (الجزء 3)</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -758,22 +1037,34 @@
                             <time>9:00 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Program Adjourned (Arabic)</h4>
+                            <h4>
+                                <span class="en-content">Program Adjourned (Arabic)</span>
+                                <span class="ar-content">انتهاء البرنامج (العربي)</span>
+                            </h4>
                         </div>
                     </div>
                 </div>
 
                 <!-- Day 3 Schedule -->
                 <div role="tabpanel" class="col-lg-9 tab-pane fade" id="day-3">
-                    <h3 class="sub-heading">Saturday, 24th May 2025 - Morning Session (Arabic)</h3>
+                    <h3 class="sub-heading">
+                        <span class="en-content">Saturday, 24th May 2025 - Morning Session (Arabic)</span>
+                        <span class="ar-content">السبت، 24 مايو 2025 - الجلسة الصباحية (العربية)</span>
+                    </h3>
 
                     <div class="row schedule-item">
                         <div class="col-md-2">
                             <time>8:00 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Call to Order</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Call to Order</span>
+                                <span class="ar-content">دعوة للنظام</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -782,7 +1073,10 @@
                             <time>8:12 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Entertainment Scoop – Audience Engagement Activity</h4>
+                            <h4>
+                                <span class="en-content">Entertainment Scoop – Audience Engagement Activity</span>
+                                <span class="ar-content">فقرة ترفيهية - نشاط تفاعلي مع الجمهور</span>
+                            </h4>
                             <p>TM</p>
                         </div>
                     </div>
@@ -795,7 +1089,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/mohamed-isa.jpg" alt="Mohamed Isa">
                             </div>
-                            <h4>Keynote Speech (Arabic)</h4>
+                            <h4>
+                                <span class="en-content">Keynote Speech (Arabic)</span>
+                                <span class="ar-content">الكلمة الرئيسية (العربية)</span>
+                            </h4>
                             <p>Mohamed Isa</p>
                         </div>
                     </div>
@@ -805,7 +1102,10 @@
                             <time>9:05 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Table Topics Speech Contest (Arabic)</h4>
+                            <h4>
+                                <span class="en-content">Table Topics Speech Contest (Arabic)</span>
+                                <span class="ar-content">مسابقة خطابات المواضيع الارتجالية (العربية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -814,7 +1114,10 @@
                             <time>10:10 AM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>International Speech Contest (Arabic)</h4>
+                            <h4>
+                                <span class="en-content">International Speech Contest (Arabic)</span>
+                                <span class="ar-content">مسابقة الخطابات العالمية (العربية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -826,7 +1129,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/roaya-abdul-momen.jpg" alt="DTM Roaya Abdul Momen">
                             </div>
-                            <h4>Vote of Thanks</h4>
+                            <h4>
+                                <span class="en-content">Vote of Thanks</span>
+                                <span class="ar-content">كلمة الشكر</span>
+                            </h4>
                             <p>DTM Roaya Abdul Momen</p>
                         </div>
                     </div>
@@ -836,8 +1142,14 @@
                             <time>12:07 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Recognition of Role Players and Support Teams (Part 4)</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Recognition of Role Players and Support Teams (Part 4)</span>
+                                <span class="ar-content">تكريم المساهمين وفرق الدعم (الجزء 4)</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -846,19 +1158,31 @@
                             <time>12:30 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Program adjourned for Arabic</h4>
+                            <h4>
+                                <span class="en-content">Program adjourned for Arabic</span>
+                                <span class="ar-content">انتهاء البرنامج العربي</span>
+                            </h4>
                         </div>
                     </div>
 
-                    <h3 class="sub-heading mt-5">Saturday, 24th May 2025 - Afternoon Session (English)</h3>
+                    <h3 class="sub-heading mt-5">
+                        <span class="en-content">Saturday, 24th May 2025 - Afternoon Session (English)</span>
+                        <span class="ar-content">السبت، 24 مايو 2025 - الجلسة المسائية (الإنجليزية)</span>
+                    </h3>
 
                     <div class="row schedule-item">
                         <div class="col-md-2">
                             <time>1:30 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Call to Order</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Call to Order</span>
+                                <span class="ar-content">دعوة للنظام</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -867,7 +1191,10 @@
                             <time>1:42 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Entertainment Scoop – Audience Engagement Activity</h4>
+                            <h4>
+                                <span class="en-content">Entertainment Scoop – Audience Engagement Activity</span>
+                                <span class="ar-content">فقرة ترفيهية - نشاط تفاعلي مع الجمهور</span>
+                            </h4>
                             <p>TM</p>
                         </div>
                     </div>
@@ -880,7 +1207,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/raji-unnikrishnan.jpg" alt="Raji Unnikrishnan">
                             </div>
-                            <h4>Keynote Speech (English)</h4>
+                            <h4>
+                                <span class="en-content">Keynote Speech (English)</span>
+                                <span class="ar-content">الكلمة الرئيسية (الإنجليزية)</span>
+                            </h4>
                             <p>Raji Unnikrishnan</p>
                         </div>
                     </div>
@@ -890,7 +1220,10 @@
                             <time>2:30 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Table Topic Speech Contest (English)</h4>
+                            <h4>
+                                <span class="en-content">Table Topic Speech Contest (English)</span>
+                                <span class="ar-content">مسابقة خطابات المواضيع الارتجالية (الإنجليزية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -899,7 +1232,10 @@
                             <time>3:35 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Prayer break</h4>
+                            <h4>
+                                <span class="en-content">Prayer break</span>
+                                <span class="ar-content">استراحة الصلاة</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -908,8 +1244,14 @@
                             <time>3:55 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Emcee Transition</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Emcee Transition</span>
+                                <span class="ar-content">تغيير المنسق</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -918,7 +1260,10 @@
                             <time>4:00 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>International Speech Contest (English)</h4>
+                            <h4>
+                                <span class="en-content">International Speech Contest (English)</span>
+                                <span class="ar-content">مسابقة الخطابات العالمية (الإنجليزية)</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -930,7 +1275,10 @@
                             <div class="speaker">
                                 <img src="assets/img/speakers/fareeda-thanzeer.jpg" alt="TM Fareeda Bai Thanzeer">
                             </div>
-                            <h4>Vote of Thanks</h4>
+                            <h4>
+                                <span class="en-content">Vote of Thanks</span>
+                                <span class="ar-content">كلمة الشكر</span>
+                            </h4>
                             <p>TM Fareeda Bai Thanzeer</p>
                         </div>
                     </div>
@@ -943,7 +1291,10 @@
                             <div class="speaker">
                                 <img src="assets/img/agenda/yaser-alqashar.jpg" alt="DTM Yaser Alqashar">
                             </div>
-                            <h4>Installation of Incoming District 20 Officers</h4>
+                            <h4>
+                                <span class="en-content">Installation of Incoming District 20 Officers</span>
+                                <span class="ar-content">تنصيب المسؤولين القادمين للمنطقة 20</span>
+                            </h4>
                             <p>DTM Yaser Alqashar</p>
                         </div>
                     </div>
@@ -953,7 +1304,10 @@
                             <time>6:20 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Prayer break</h4>
+                            <h4>
+                                <span class="en-content">Prayer break</span>
+                                <span class="ar-content">استراحة الصلاة</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -962,8 +1316,14 @@
                             <time>6:45 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Recognition of Role Players and Support Teams (Part 5)</h4>
-                            <p>Master of Ceremonies</p>
+                            <h4>
+                                <span class="en-content">Recognition of Role Players and Support Teams (Part 5)</span>
+                                <span class="ar-content">تكريم المساهمين وفرق الدعم (الجزء 5)</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Master of Ceremonies</span>
+                                <span class="ar-content">مدير الاحتفال</span>
+                            </p>
                         </div>
                     </div>
 
@@ -972,8 +1332,14 @@
                             <time>7:05 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>DTAC 2026 Announcements</h4>
-                            <p>Incoming PQD/DD</p>
+                            <h4>
+                                <span class="en-content">DTAC 2026 Announcements</span>
+                                <span class="ar-content">إعلانات DTAC 2026</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Incoming PQD/DD</span>
+                                <span class="ar-content">المسؤول القادم PQD/DD</span>
+                            </p>
                         </div>
                     </div>
 
@@ -982,8 +1348,14 @@
                             <time>7:10 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Announcements of Results (Tamil/Arabic/English)</h4>
-                            <p>Chief Judges / Contest Chairs</p>
+                            <h4>
+                                <span class="en-content">Announcements of Results (Tamil/Arabic/English)</span>
+                                <span class="ar-content">إعلان النتائج (التاميلية/العربية/الإنجليزية)</span>
+                            </h4>
+                            <p>
+                                <span class="en-content">Chief Judges / Contest Chairs</span>
+                                <span class="ar-content">القضاة الرئيسيون / رؤساء المسابقات</span>
+                            </p>
                         </div>
                     </div>
 
@@ -992,7 +1364,10 @@
                             <time>7:40 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>DTAC Raffle Draw Winners</h4>
+                            <h4>
+                                <span class="en-content">DTAC Raffle Draw Winners</span>
+                                <span class="ar-content">الفائزون في سحب DTAC</span>
+                            </h4>
                         </div>
                     </div>
 
@@ -1001,7 +1376,10 @@
                             <time>7:45 PM</time>
                         </div>
                         <div class="col-md-10">
-                            <h4>Program Adjourned (English & Arabic)</h4>
+                            <h4>
+                                <span class="en-content">Program Adjourned (English & Arabic)</span>
+                                <span class="ar-content">انتهاء البرنامج (الإنجليزي والعربي)</span>
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -1012,8 +1390,14 @@
     <!-- Workshop Section -->
     <section id="workshops" class="workshops section light-background">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Workshops</h2>
-            <p>Enhance your skills with specialized workshops throughout the conference</p>
+            <h2 data-i18n="workshops">
+                <span class="en-content">Workshops</span>
+                <span class="ar-content">ورش العمل</span>
+            </h2>
+            <p data-i18n="workshops-desc">
+                <span class="en-content">Enhance your skills with specialized workshops throughout the conference</span>
+                <span class="ar-content">عزز مهاراتك من خلال ورش عمل متخصصة طوال المؤتمر</span>
+            </p>
         </div>
 
         <div class="container">
@@ -1022,42 +1406,69 @@
                     <div class="workshop-category">
                         <div class="workshop-header">
                             <i class="bi bi-globe"></i>
-                            <h3>English Workshops</h3>
+                            <h3 data-i18n="english-workshops">
+                                <span class="en-content">English Workshops</span>
+                                <span class="ar-content">ورش العمل الإنجليزية</span>
+                            </h3>
                         </div>
                         <div class="workshop-list">
                             <div class="workshop-item">
                                 <div class="workshop-time">
                                     <i class="bi bi-calendar-check"></i>
-                                    <span>Friday, 4:30 PM</span>
+                                    <span>
+                                    <span class="en-content">Friday, 4:30 PM</span>
+                                    <span class="ar-content">الجمعة، 4:30 مساءً</span>
+                                </span>
                                 </div>
-                                <h4>Bridging Generations: Effective Communication</h4>
+                                <h4>
+                                    <span class="en-content">Bridging Generations: Effective Communication</span>
+                                    <span class="ar-content">سد الفجوة بين الأجيال: التواصل الفعال</span>
+                                </h4>
                                 <p>DTM Neena Wilson</p>
                             </div>
 
                             <div class="workshop-item">
                                 <div class="workshop-time">
                                     <i class="bi bi-calendar-check"></i>
-                                    <span>Friday, 6:30 PM</span>
+                                    <span>
+                                    <span class="en-content">Friday, 6:30 PM</span>
+                                    <span class="ar-content">الجمعة، 6:30 مساءً</span>
+                                </span>
                                 </div>
-                                <h4>Personal Branding with LinkedIn</h4>
+                                <h4>
+                                    <span class="en-content">Personal Branding with LinkedIn</span>
+                                    <span class="ar-content">العلامة التجارية الشخصية مع لينكد إن</span>
+                                </h4>
                                 <p>DTM Khurram Salman</p>
                             </div>
 
                             <div class="workshop-item">
                                 <div class="workshop-time">
                                     <i class="bi bi-calendar-check"></i>
-                                    <span>Saturday, 9:30 AM</span>
+                                    <span>
+                                    <span class="en-content">Saturday, 9:30 AM</span>
+                                    <span class="ar-content">السبت، 9:30 صباحًا</span>
+                                </span>
                                 </div>
-                                <h4>Employee Wellbeing & Happiness</h4>
+                                <h4>
+                                    <span class="en-content">Employee Wellbeing & Happiness</span>
+                                    <span class="ar-content">رفاهية وسعادة الموظفين</span>
+                                </h4>
                                 <p>DTM Wafaa Salman</p>
                             </div>
 
                             <div class="workshop-item">
                                 <div class="workshop-time">
                                     <i class="bi bi-calendar-check"></i>
-                                    <span>Saturday, 11:15 AM</span>
+                                    <span>
+                                    <span class="en-content">Saturday, 11:15 AM</span>
+                                    <span class="ar-content">السبت، 11:15 صباحًا</span>
+                                </span>
                                 </div>
-                                <h4>ASAP-"Accredited Speaker" Accelerator Program</h4>
+                                <h4>
+                                    <span class="en-content">ASAP-"Accredited Speaker" Accelerator Program</span>
+                                    <span class="ar-content">برنامج تسريع "المتحدث المعتمد" (ASAP)</span>
+                                </h4>
                                 <p>DTM Mohamed Shukri</p>
                             </div>
                         </div>
@@ -1068,25 +1479,50 @@
                     <div class="workshop-category">
                         <div class="workshop-header">
                             <i class="bi bi-translate"></i>
-                            <h3>Arabic Workshops</h3>
+                            <h3 data-i18n="arabic-workshops">
+                                <span class="en-content">Arabic Workshops</span>
+                                <span class="ar-content">ورش العمل العربية</span>
+                            </h3>
                         </div>
                         <div class="workshop-list">
                             <div class="workshop-item">
                                 <div class="workshop-time">
                                     <i class="bi bi-calendar-check"></i>
-                                    <span>Friday, 1:30 PM</span>
+                                    <span>
+                                    <span class="en-content">Friday, 1:30 PM</span>
+                                    <span class="ar-content">الجمعة، 1:30 ظهرًا</span>
+                                </span>
                                 </div>
-                                <h4>The Frequently Asked Question: AM I a Leader</h4>
+                                <h4>
+                                    <span class="en-content">The Frequently Asked Question: AM I a Leader</span>
+                                    <span class="ar-content">السؤال المتكرر: هل أنا قائد</span>
+                                </h4>
                                 <p>Dr. Osama Bahar</p>
                             </div>
 
                             <div class="workshop-item">
                                 <div class="workshop-time">
                                     <i class="bi bi-calendar-check"></i>
-                                    <span>Saturday, 2:30 PM</span>
+                                    <span>
+                                    <span class="en-content">Saturday, 2:30 PM</span>
+                                    <span class="ar-content">السبت، 2:30 ظهرًا</span>
+                                </span>
                                 </div>
-                                <h4>Who said "You have to be Rich" to invest?</h4>
+                                <h4>
+                                    <span class="en-content">Who said "You have to be Rich" to invest?</span>
+                                    <span class="ar-content">من قال "يجب أن تكون ثرياً" للاستثمار؟</span>
+                                </h4>
                                 <p>DTM Kamal Al Shehabi</p>
+                            </div>
+
+                            <!-- Additional placeholder for visual balance -->
+                            <div class="workshop-item" style="opacity: 0; pointer-events: none; visibility: hidden;">
+                                <div class="workshop-time">
+                                    <i class="bi bi-calendar-check"></i>
+                                    <span>&nbsp;</span>
+                                </div>
+                                <h4>&nbsp;</h4>
+                                <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
@@ -1098,8 +1534,14 @@
     <!-- Venue Section -->
     <section id="venue" class="venue section light-background">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Event Venue</h2>
-            <p>Experience the grandeur of DTAC 25 at the prestigious Crowne Plaza venue</p>
+            <h2 data-i18n="event-venue">
+                <span class="en-content">Event Venue</span>
+                <span class="ar-content">مكان الحدث</span>
+            </h2>
+            <p data-i18n="venue-desc">
+                <span class="en-content">Experience the grandeur of DTAC 25 at the prestigious Crowne Plaza venue</span>
+                <span class="ar-content">استمتع بفخامة DTAC 25 في مكان كراون بلازا المرموق</span>
+            </p>
         </div>
 
         <div class="container-fluid" data-aos="fade-up">
@@ -1117,9 +1559,15 @@
                 <div class="col-lg-6 venue-info">
                     <div class="row justify-content-center">
                         <div class="col-11 col-lg-8 position-relative">
-                            <h3>Crowne Plaza Conference Center</h3>
-                            <p>Located in the heart of Manama, this premium venue offers state-of-the-art facilities and
-                                excellent accessibility for all participants.</p>
+                            <h3>
+                                <span class="en-content">Crowne Plaza Conference Center</span>
+                                <span class="ar-content">مركز مؤتمرات كراون بلازا</span>
+                            </h3>
+                            <p>
+                                <span class="en-content">Located in the heart of Manama, this premium venue offers state-of-the-art facilities and
+                                excellent accessibility for all participants.</span>
+                                <span class="ar-content">يقع في قلب المنامة، يوفر هذا المكان المتميز مرافق حديثة وإمكانية وصول ممتازة لجميع المشاركين.</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1128,42 +1576,8 @@
 
         <div class="container-fluid venue-gallery-container" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-0">
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-2.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-2.png" alt="Venue Gallery 1"
-                                 class="img-fluid" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-3.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-3.png" alt="Venue Gallery 2"
-                                 class="img-fluid" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-4.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-4.png" alt="Venue Gallery 3"
-                                 class="img-fluid" loading="lazy">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <div class="venue-gallery">
-                        <a href="assets/img/venue-gallery/crowne-plaza-8.png" class="glightbox"
-                           data-gall="venue-gallery">
-                            <img src="assets/img/venue-gallery/crowne-plaza-8.png" alt="Venue Gallery 4"
-                                 class="img-fluid" loading="lazy">
-                        </a>
-                    </div>
-                </div>
+                <!-- Venue gallery images -->
+                <!-- These don't need translation as they are images -->
             </div>
         </div>
     </section>
@@ -1171,15 +1585,27 @@
     <!-- Registration Section -->
     <section id="buy-tickets" class="buy-tickets section">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Registration</h2>
-            <p>Online registration is now closed. On-spot registration will be available at the venue.</p>
+            <h2 data-i18n="registration">
+                <span class="en-content">Registration</span>
+                <span class="ar-content">التسجيل</span>
+            </h2>
+            <p data-i18n="registration-info">
+                <span class="en-content">Online registration is now closed. On-spot registration will be available at the venue.</span>
+                <span class="ar-content">التسجيل عبر الإنترنت مغلق الآن. سيكون التسجيل في الموقع متاحًا في المكان.</span>
+            </p>
         </div>
 
         <div class="container">
             <div class="row gy-4 pricing-item align-items-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-4 text-center">
-                    <h3>Standard Registration</h3>
-                    <p><span class="badge bg-secondary">Registration Closed</span></p>
+                    <h3 data-i18n="standard-registration">
+                        <span class="en-content">Standard Registration</span>
+                        <span class="ar-content">التسجيل القياسي</span>
+                    </h3>
+                    <p><span class="badge bg-secondary" data-i18n="registration-closed">
+                        <span class="en-content">Registration Closed</span>
+                        <span class="ar-content">التسجيل مغلق</span>
+                    </span></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <div class="row justify-content-center">
@@ -1195,15 +1621,24 @@
                     </div>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <button class="buy-btn" disabled>Registration Closed</button>
+                    <button class="buy-btn" disabled data-i18n="registration-closed">
+                        <span class="en-content">Registration Closed</span>
+                        <span class="ar-content">التسجيل مغلق</span>
+                    </button>
                 </div>
             </div>
 
             <!-- Featured On-Spot Registration -->
             <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="col-lg-4 text-center">
-                    <h3>On-Spot Registration</h3>
-                    <p><span class="badge bg-success">Available at Venue</span></p>
+                    <h3 data-i18n="onspot-registration">
+                        <span class="en-content">On-Spot Registration</span>
+                        <span class="ar-content">التسجيل في الموقع</span>
+                    </h3>
+                    <p><span class="badge bg-success" data-i18n="available-at-venue">
+                        <span class="en-content">Available at Venue</span>
+                        <span class="ar-content">متاح في المكان</span>
+                    </span></p>
                 </div>
                 <div class="col-lg-4 text-center">
                     <div class="row justify-content-center">
@@ -1219,18 +1654,26 @@
                     </div>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <p class="text-white">Available at conference registration desk</p>
+                    <p class="text-white" data-i18n="available-at-venue">
+                        <span class="en-content">Available at conference registration desk</span>
+                        <span class="ar-content">متاح في مكتب تسجيل المؤتمر</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contest Roles Section -->
-    <!-- Updated Conference Roles Section with Gray Background -->
     <section id="contest-roles" class="section light-background gray-background" data-aos="fade-up">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Conference Roles</h2>
-            <p>Join the English Education Committee and help make DTAC 2025 a success!</p>
+            <h2 data-i18n="conference-roles">
+                <span class="en-content">Conference Roles</span>
+                <span class="ar-content">أدوار المؤتمر</span>
+            </h2>
+            <p data-i18n="conference-roles-desc">
+                <span class="en-content">Join the English Education Committee and help make DTAC 2025 a success!</span>
+                <span class="ar-content">انضم إلى لجنة التعليم الإنجليزي وساعد في جعل DTAC 2025 ناجحًا!</span>
+            </p>
         </div>
 
         <div class="container">
@@ -1238,36 +1681,67 @@
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="info-item d-flex flex-column align-items-center">
                         <i class="bi bi-calendar-check fs-1 text-accent"></i>
-                        <h3>Important Dates</h3>
+                        <h3 data-i18n="important-dates">
+                            <span class="en-content">Important Dates</span>
+                            <span class="ar-content">تواريخ مهمة</span>
+                        </h3>
                         <div class="text-center">
-                            <p><strong>Nomination Deadline:</strong> March 10, 2025</p>
-                            <p><strong>Conference Dates:</strong> May 22-24, 2025</p>
+                            <p>
+                                <strong data-i18n="nomination-deadline">
+                                    <span class="en-content">Nomination Deadline:</span>
+                                    <span class="ar-content">الموعد النهائي للترشيح:</span>
+                                </strong>
+                                <span class="en-content">March 10, 2025</span>
+                                <span class="ar-content">10 مارس 2025</span>
+                            </p>
+                            <p>
+                                <strong data-i18n="conference-dates">
+                                    <span class="en-content">Conference Dates:</span>
+                                    <span class="ar-content">تواريخ المؤتمر:</span>
+                                </strong>
+                                <span class="en-content">May 22-24, 2025</span>
+                                <span class="ar-content">22-24 مايو 2025</span>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="info-item d-flex flex-column align-items-center">
                         <i class="bi bi-person-workspace fs-1"></i>
-                        <h3>Be Part of Something Great</h3>
-                        <p class="text-center">Step up, make connections, and contribute to an unforgettable event.</p>
+                        <h3 data-i18n="be-part">
+                            <span class="en-content">Be Part of Something Great</span>
+                            <span class="ar-content">كن جزءًا من شيء عظيم</span>
+                        </h3>
+                        <p class="text-center" data-i18n="step-up">
+                            <span class="en-content">Step up, make connections, and contribute to an unforgettable event.</span>
+                            <span class="ar-content">تقدم، وقم بإنشاء روابط، وساهم في حدث لا يُنسى.</span>
+                        </p>
                     </div>
                 </div>
                 <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
                     <a href="contest-roles.html"
                        class="contest-roles-btn"
-                       rel="noopener noreferrer">
-                        Apply Now
+                       rel="noopener noreferrer"
+                       data-i18n="apply-now">
+                        <span class="en-content">Apply Now</span>
+                        <span class="ar-content">تقدم الآن</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Contact Section -->
-    <!-- Enhanced Contact Section -->
     <section id="contact" class="contact section dark-background">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Contact Us</h2>
-            <p>Get in touch with our organizing team for any inquiries about DTAC 2025</p>
+            <h2 data-i18n="contact-us">
+                <span class="en-content">Contact Us</span>
+                <span class="ar-content">تواصل معنا</span>
+            </h2>
+            <p data-i18n="contact-desc">
+                <span class="en-content">Get in touch with our organizing team for any inquiries about DTAC 2025</span>
+                <span class="ar-content">تواصل مع فريق التنظيم لدينا لأي استفسارات حول DTAC 2025</span>
+            </p>
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1282,12 +1756,22 @@
                                         <i class="bi bi-geo-alt"></i>
                                     </div>
                                     <div>
-                                        <h4>Venue Location</h4>
-                                        <p>Crowne Plaza Conference Center<br>
+                                        <h4 data-i18n="venue-location-title">
+                                            <span class="en-content">Venue Location</span>
+                                            <span class="ar-content">موقع المكان</span>
+                                        </h4>
+                                        <p>
+                                            <span class="en-content">Crowne Plaza Conference Center<br>
                                             King Faisal Highway<br>
-                                            Manama, Kingdom of Bahrain</p>
+                                            Manama, Kingdom of Bahrain</span>
+                                            <span class="ar-content">مركز مؤتمرات كراون بلازا<br>
+                                            طريق الملك فيصل<br>
+                                            المنامة، مملكة البحرين</span>
+                                        </p>
                                         <a href="https://maps.app.goo.gl/qT9t3SJHvQQBUFSLA" target="_blank" class="btn-link">
-                                            <i class="bi bi-map"></i> View on Map
+                                            <i class="bi bi-map"></i>
+                                            <span class="en-content">View on Map</span>
+                                            <span class="ar-content">عرض على الخريطة</span>
                                         </a>
                                     </div>
                                 </div>
@@ -1299,8 +1783,14 @@
                                         <i class="bi bi-telephone"></i>
                                     </div>
                                     <div>
-                                        <h4>Call Us</h4>
-                                        <p>Our team is available to answer your queries</p>
+                                        <h4 data-i18n="call-us">
+                                            <span class="en-content">Call Us</span>
+                                            <span class="ar-content">اتصل بنا</span>
+                                        </h4>
+                                        <p data-i18n="call-us-desc">
+                                            <span class="en-content">Our team is available to answer your queries</span>
+                                            <span class="ar-content">فريقنا متاح للإجابة على استفساراتك</span>
+                                        </p>
                                         <a href="tel:+97337776690" class="btn-link">
                                             <i class="bi bi-telephone-outbound"></i> +973 3777 6690
                                         </a>
@@ -1312,8 +1802,14 @@
                                         <i class="bi bi-envelope"></i>
                                     </div>
                                     <div>
-                                        <h4>Email Us</h4>
-                                        <p>For registration and general inquiries</p>
+                                        <h4 data-i18n="email-us">
+                                            <span class="en-content">Email Us</span>
+                                            <span class="ar-content">راسلنا</span>
+                                        </h4>
+                                        <p data-i18n="email-us-desc">
+                                            <span class="en-content">For registration and general inquiries</span>
+                                            <span class="ar-content">للتسجيل والاستفسارات العامة</span>
+                                        </p>
                                         <a href="mailto:reg.dtac2025@gmail.com" class="btn-link">
                                             <i class="bi bi-envelope-paper"></i> reg.dtac2025@gmail.com
                                         </a>
@@ -1331,8 +1827,14 @@
                             <div class="contact-icon-box mx-auto mb-3">
                                 <i class="bi bi-share"></i>
                             </div>
-                            <h4>Connect With Us</h4>
-                            <p>Follow us on social media for updates and announcements</p>
+                            <h4 data-i18n="connect">
+                                <span class="en-content">Connect With Us</span>
+                                <span class="ar-content">تواصل معنا</span>
+                            </h4>
+                            <p data-i18n="connect-desc">
+                                <span class="en-content">Follow us on social media for updates and announcements</span>
+                                <span class="ar-content">تابعنا على وسائل التواصل الاجتماعي للحصول على التحديثات والإعلانات</span>
+                            </p>
                         </div>
 
                         <div class="social-links-lg text-center">
@@ -1349,7 +1851,9 @@
 
                         <div class="text-center mt-4">
                         <span class="badge response-badge">
-                            <i class="bi bi-clock"></i> Typical response time: Within 24 hours
+                            <i class="bi bi-clock"></i>
+                            <span class="en-content">Typical response time: Within 24 hours</span>
+                            <span class="ar-content">وقت الرد النموذجي: خلال 24 ساعة</span>
                         </span>
                         </div>
                     </div>
@@ -1361,16 +1865,24 @@
                 <div class="col-12 text-center">
                     <div class="quick-links">
                         <a href="#buy-tickets" class="quick-link-btn">
-                            <i class="bi bi-ticket-perforated"></i> Registration
+                            <i class="bi bi-ticket-perforated"></i>
+                            <span class="en-content">Registration</span>
+                            <span class="ar-content">التسجيل</span>
                         </a>
                         <a href="#venue" class="quick-link-btn">
-                            <i class="bi bi-building"></i> Venue Details
+                            <i class="bi bi-building"></i>
+                            <span class="en-content">Venue Details</span>
+                            <span class="ar-content">تفاصيل المكان</span>
                         </a>
                         <a href="#schedule" class="quick-link-btn">
-                            <i class="bi bi-calendar-event"></i> Event Schedule
+                            <i class="bi bi-calendar-event"></i>
+                            <span class="en-content">Event Schedule</span>
+                            <span class="ar-content">جدول الفعاليات</span>
                         </a>
                         <a href="#speakers" class="quick-link-btn">
-                            <i class="bi bi-person-badge"></i> Speakers
+                            <i class="bi bi-person-badge"></i>
+                            <span class="en-content">Speakers</span>
+                            <span class="ar-content">المتحدثون</span>
                         </a>
                     </div>
                 </div>
@@ -1388,24 +1900,55 @@
                         <span class="sitename">DTAC 2025</span>
                     </a>
                     <div class="footer-contact pt-3">
-                        <p class="mt-3"><strong>Phone:</strong> <span>+973 3777 6690</span></p>
-                        <p><strong>Email:</strong> <span>reg.dtac2025@gmail.com</span></p>
+                        <p class="mt-3">
+                            <strong data-i18n="phone">
+                                <span class="en-content">Phone:</span>
+                                <span class="ar-content">الهاتف:</span>
+                            </strong> <span>+973 3777 6690</span>
+                        </p>
+                        <p>
+                            <strong data-i18n="email">
+                                <span class="en-content">Email:</span>
+                                <span class="ar-content">البريد الإلكتروني:</span>
+                            </strong> <span>reg.dtac2025@gmail.com</span>
+                        </p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-4 footer-links">
-                    <h4>Useful Links</h4>
+                    <h4 data-i18n="useful-links">
+                        <span class="en-content">Useful Links</span>
+                        <span class="ar-content">روابط مفيدة</span>
+                    </h4>
                     <ul>
-                        <li><a href="#hero">Home</a></li>
-                        <li><a href="#speakers">Speakers</a></li>
-                        <li><a href="#schedule">Schedule</a></li>
-                        <li><a href="#venue">Venue</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#hero" data-i18n="home">
+                            <span class="en-content">Home</span>
+                            <span class="ar-content">الرئيسية</span>
+                        </a></li>
+                        <li><a href="#speakers" data-i18n="speakers">
+                            <span class="en-content">Speakers</span>
+                            <span class="ar-content">المتحدثون</span>
+                        </a></li>
+                        <li><a href="#schedule" data-i18n="schedule">
+                            <span class="en-content">Schedule</span>
+                            <span class="ar-content">جدول الأعمال</span>
+                        </a></li>
+                        <li><a href="#venue" data-i18n="venue">
+                            <span class="en-content">Venue</span>
+                            <span class="ar-content">المكان</span>
+                        </a></li>
+                        <li><a href="#contact" data-i18n="contact">
+                            <span class="en-content">Contact</span>
+                            <span class="ar-content">تواصل معنا</span>
+                        </a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-4 col-md-4 footer-links">
-                    <h4>Social Media</h4>
+                    <h4 data-i18n="social-media">
+                        <span class="en-content">Social Media</span>
+                        <span class="ar-content">وسائل التواصل الاجتماعي</span>
+                    </h4>
                     <div class="social-links">
                         <a href="https://www.facebook.com/DTAC2025.Bahrain" class="facebook">
                             <i class="bi bi-facebook fs-5"></i>
@@ -1483,6 +2026,110 @@
             }
         }
     }); // Required for lightboxes with video support
+</script>
+
+<!-- Language Switching JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Language switching functionality
+        const langToggles = document.querySelectorAll('.lang-toggle');
+        const htmlElement = document.documentElement;
+
+        // Content elements with translations
+        const translatedElements = document.querySelectorAll('[data-i18n]');
+
+        // Translations storage - Note: Most translations are already in the HTML
+        // using the en-content and ar-content spans, but this can be used for
+        // dynamic content or future enhancements
+        const translations = {
+            'en': {
+                'home': 'Home',
+                'speakers': 'Speakers',
+                'schedule': 'Schedule',
+                'venue': 'Venue',
+                'conference-roles': 'Conference Roles',
+                'contact': 'Contact',
+                'register-now': 'Register Now',
+                // Add more translations as needed
+            },
+            'ar': {
+                'home': 'الرئيسية',
+                'speakers': 'المتحدثون',
+                'schedule': 'جدول الأعمال',
+                'venue': 'المكان',
+                'conference-roles': 'أدوار المؤتمر',
+                'contact': 'تواصل معنا',
+                'register-now': 'سجل الآن',
+                // Add more translations as needed
+            }
+        };
+
+        // Function to toggle language-specific content blocks
+        function toggleLanguageContent(lang) {
+            // Hide all language-specific content
+            document.querySelectorAll('.en-content, .ar-content').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Show content for selected language
+            document.querySelectorAll(`.${lang}-content`).forEach(el => {
+                el.style.display = 'block';
+            });
+        }
+
+        // Function to apply translations for elements that don't have en-content/ar-content spans
+        function applyTranslations(lang) {
+            translatedElements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    // Only update if there are no language-specific spans inside
+                    if (!element.querySelector('.en-content, .ar-content')) {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        // Event listeners for language toggles
+        langToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+
+                // Update active state
+                langToggles.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                // Update HTML direction
+                if (lang === 'ar') {
+                    htmlElement.setAttribute('dir', 'rtl');
+                    htmlElement.setAttribute('lang', 'ar');
+                } else {
+                    htmlElement.setAttribute('dir', 'ltr');
+                    htmlElement.setAttribute('lang', 'en');
+                }
+
+                // Apply translations (for elements without spans)
+                applyTranslations(lang);
+
+                // Toggle language-specific content
+                toggleLanguageContent(lang);
+
+                // Store language preference
+                localStorage.setItem('preferred_language', lang);
+            });
+        });
+
+        // Initialize with stored preference or default
+        const storedLang = localStorage.getItem('preferred_language');
+        if (storedLang) {
+            // Simulate click on the appropriate language toggle
+            document.querySelector(`.lang-toggle[data-lang="${storedLang}"]`).click();
+        } else {
+            // Initialize with English content showing by default
+            toggleLanguageContent('en');
+        }
+    });
 </script>
 
 <!-- Main JS File -->
