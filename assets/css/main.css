@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: space-between; /* Distributes space: Logo left, Nav/CTA group right */
     position: relative;
-    max-width: 1140px; /* Standard for container-xl, adjust if needed */
+    max-width: 1230px; /* Standard for container-xl, adjust if needed */
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--bs-gutter-x, 0.75rem); /* Respect Bootstrap gutters */
@@ -3178,5 +3178,99 @@ html[dir="rtl"] .section-title h2:after {
 
     .patronage-description {
         font-size: 0.9rem;
+    }
+}
+
+.maroon-background-2{
+    background: var(--toastmasters-true-maroon) !important;
+}
+
+/* Add to your CSS file */
+/* Prevent content-shifting during loading */
+.sponsor-profile,
+.speaker-profile,
+.schedule-item,
+.workshop-category,
+.contact-card {
+    min-height: 100px;
+    background-color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle loading skeleton */
+.sponsor-profile::before,
+.speaker-profile::before,
+.schedule-item::before,
+.workshop-category::before,
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    z-index: -1;
+}
+
+/* Force hardware acceleration to reduce visual stutter */
+body {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive hero banner image sizing */
+.hero > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+    .hero {
+        max-height: 85vh; /* Reduce the overall hero height on mobile */
+    }
+
+    .hero > img {
+        object-position: center; /* Center the focus of the image */
+    }
+
+    /* Adjust hero content to fit better on mobile */
+    .hero .container {
+        padding-top: 30px; /* Add some space at top */
+        margin-bottom: 20px; /* Add space before about info */
+    }
+
+    .hero h2 {
+        font-size: 28px; /* Smaller title on mobile */
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 16px; /* Smaller text on mobile */
+    }
+
+    /* Make the about info section more compact */
+    .hero .about-info {
+        padding: 20px 0;
+    }
+
+    .hero .about-info h2 {
+        font-size: 20px;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 14px;
     }
 }

@@ -143,7 +143,13 @@
             <span class="mx-2">|</span>
             <a href="#" class="lang-toggle" data-lang="ar">العربية</a>
         </div>
-        <a class="cta-btn d-none d-sm-block" href="#buy-tickets" data-i18n="register-now">Register Now</a>
+        <a id="pwa-install-btn" class="cta-btn d-none d-sm-block maroon-background-2" style="color:white;display: none;" href="#" data-i18n="install-app">
+            <i class="bi bi-download me-2"></i>
+        </a>
+        <a id="register-btn" class="cta-btn d-none d-sm-block" href="#buy-tickets" data-i18n="register-now">
+            <span class="en-content">Register Now</span>
+            <span class="ar-content">سجل الآن</span>
+        </a>
     </div>
 </header>
 
@@ -151,8 +157,8 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-        <img src="assets/img/banner.jpg" alt="Conference Banner" data-aos="fade-in" loading="eager"
-             decoding="sync">
+        <img src="assets/img/banner-min.jpg" alt="Conference Banner" data-aos="fade-in" loading="eager"
+             decoding="sync" fetchpriority="high">
 
         <div class="container d-flex flex-column align-items-center text-center mt-auto">
             <div class="patronage-info mb-3" data-aos="fade-up">
