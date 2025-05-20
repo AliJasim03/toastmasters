@@ -243,70 +243,55 @@
 // Add to your main.js file
 // PWA Installation logic
 let deferredPrompt;
-const pwaInstallBtn = document.getElementById('pwa-install-btn');
-const registerBtn = document.getElementById('register-btn');
-
-// Check if PWA is already installed
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        console.log('App is already installed');
-        // Hide both buttons if app is already installed
-        if (pwaInstallBtn) pwaInstallBtn.style.display = 'none';
-        // Optional: You can still show or hide the register button based on your needs
-        // if (registerBtn) registerBtn.style.display = 'none';
-    }
-});
 
 // Listen for the beforeinstallprompt event
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the default browser prompt
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
-
-    // Store the event for later use
+    
+    // Stash the event so it can be triggered later
     deferredPrompt = e;
-
-    // Hide register button and show install button
-    if (registerBtn) registerBtn.style.display = 'none';
+    
+    // Show the install button
+    const pwaInstallBtn = document.getElementById('pwa-install-btn');
     if (pwaInstallBtn) {
-        pwaInstallBtn.style.display = 'inline-flex';
-
+        pwaInstallBtn.style.display = 'inline-block';
+        
         // Add click handler to the install button
-        pwaInstallBtn.addEventListener('click', async (e) => {
+        pwaInstallBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            if (!deferredPrompt) return;
-
+            
+            // Hide the install button
+            pwaInstallBtn.style.display = 'none';
+            
             // Show the install prompt
             deferredPrompt.prompt();
-
-            // Wait for user's choice
-            const { outcome } = await deferredPrompt.userChoice;
-            console.log(`User response to install prompt: ${outcome}`);
-
-            // Clear the deferred prompt
-            deferredPrompt = null;
-
-            if (outcome === 'accepted') {
-                // Hide the install button
-                pwaInstallBtn.style.display = 'none';
-                // Optionally, show register button again
-                // registerBtn.style.display = 'inline-flex';
-            } else {
-                // If user dismissed, show register button again
-                pwaInstallBtn.style.display = 'none';
-                registerBtn.style.display = 'inline-flex';
-            }
+            
+            // Wait for the user to respond to the prompt
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                
+                // Clear the deferredPrompt variable
+                deferredPrompt = null;
+            });
         });
     }
 });
 
-// Listen for successful installation
+// Hide the install button if the app is already installed
 window.addEventListener('appinstalled', () => {
     console.log('PWA was installed');
-    // Hide the install button
-    if (pwaInstallBtn) pwaInstallBtn.style.display = 'none';
-    // Optionally, show register button again
-    // if (registerBtn) registerBtn.style.display = 'inline-flex';
+    const pwaInstallBtn = document.getElementById('pwa-install-btn');
+    if (pwaInstallBtn) {
+        pwaInstallBtn.style.display = 'none';
+    }
+    deferredPrompt = null;
 });
+
 // Create a new file called translations.js in your assets/js directory
 
 /**

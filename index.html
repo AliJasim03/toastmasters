@@ -45,6 +45,7 @@
     <!-- PWA Icons and Manifest -->
     <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png">
+    <link rel="manifest" href="manifest.json">
 
     <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" href="assets/img/favicon-192.png">
@@ -1694,15 +1695,9 @@
 <!-- Preloader -->
 <div id="preloader"></div>
 
-<!-- Progressive Web App -->
+<!-- Service Worker Registration -->
 <script>
-    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-        document.write('<link rel="manifest" href="/toastmasters/manifest.json">');
-    }
-
-    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-
-    if (!isDevelopment && 'serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./service-worker.js')
                 .then(registration => {
@@ -1712,17 +1707,6 @@
                     console.error('ServiceWorker registration failed:', error);
                 });
         });
-    } else {
-        console.log('PWA features disabled in development mode');
-
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.getRegistrations().then(registrations => {
-                for (let registration of registrations) {
-                    registration.unregister();
-                    console.log('ServiceWorker unregistered for development mode');
-                }
-            });
-        }
     }
 </script>
 

@@ -732,17 +732,35 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-    width: 100%;
-    min-height: 100vh;
     position: relative;
-    padding: 100px 0 0 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    background-size: cover;
-    background-position: center;
-    color: var(--toastmasters-white);
+    width: 100%;
+    min-height: 80vh;
+    overflow: hidden;
+    padding: 130px 0 80px;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 60px;
+    }
+    
+    .hero img {
+        /* Improve mobile banner display */
+        object-position: center;
+        height: 100%;
+    }
 }
 
 .hero > img[data-aos="fade-in"] {
@@ -1717,6 +1735,7 @@ body {
     border-radius: 10px;
     border: 1px solid var(--toastmasters-cool-gray);
     margin-bottom: 30px;
+    height: 100%;
 }
 
 .buy-tickets .pricing-item h3 {
