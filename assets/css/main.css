@@ -3134,3 +3134,49 @@ html[dir="rtl"] .section-title h2:after {
     backface-visibility: hidden;
     transform: translateZ(0);
 }
+
+.patronage-info {
+    margin-bottom: 20px;
+    opacity: 0.9;
+    color : var(--toastmasters-true-maroon);
+}
+
+.patronage-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color : var(--toastmasters-true-maroon);
+}
+
+.patronage-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color : var(--toastmasters-true-maroon);
+}
+
+.patronage-description {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.9;
+    color : var(--toastmasters-true-maroon) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .patronage-title {
+        font-size: 1rem;
+    }
+
+    .patronage-name {
+        font-size: 1.2rem;
+    }
+
+    .patronage-description {
+        font-size: 0.9rem;
+    }
+}
