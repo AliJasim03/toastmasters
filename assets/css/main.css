@@ -385,7 +385,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .scrolled .header .navmenu a:hover, .scrolled .header .navmenu .active > a {
-    color: var(--toastmasters-cool-gray);
+    color: var(--toastmasters-true-maroon);
 }
 
 .scrolled .header .navmenu > ul > li > a:before {
@@ -2823,4 +2823,314 @@ html[dir="rtl"] .section-title h2:after {
 [dir="rtl"] .workshop-time i {
     margin-right: 0;
     margin-left: 10px;
+}
+
+/* Sponsors Card-Based Layout CSS */
+
+/* Main Container for Sponsors */
+.sponsors-container {
+    padding: 20px 0;
+}
+
+/* Grid Layout for Sponsor Cards */
+.sponsor-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Base Sponsor Card Styling */
+.sponsor-card {
+    position: relative;
+    background-color: var(--toastmasters-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Container */
+.sponsor-logo {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: #ffffff;
+    position: relative;
+    min-height: 120px;
+}
+
+.sponsor-logo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.sponsor-logo img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(15%);
+}
+
+.sponsor-card:hover .sponsor-logo img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+/* Category Label */
+.sponsor-category {
+    padding: 12px 5px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--toastmasters-white);
+    transition: background-color 0.3s ease;
+}
+
+/* Different Card Sizes Based on Sponsor Tier */
+
+/* Strategic Partner - Extra Large */
+.strategic-card {
+    grid-column: span 4; /* Full width on all screens */
+    min-height: 220px;
+}
+
+.strategic-card .sponsor-logo {
+    padding: 40px;
+    min-height: 160px;
+}
+
+.strategic-card .sponsor-logo img {
+    max-height: 140px;
+}
+
+.strategic-card .sponsor-category {
+    background-color: var(--toastmasters-loyal-blue);
+    font-size: 0.9rem;
+    padding: 15px 5px;
+}
+
+/* Gold Sponsor - Large */
+.gold-card {
+    grid-column: span 4; /* Full width on desktop, will adjust for mobile */
+    min-height: 180px;
+}
+
+.gold-card .sponsor-logo {
+    padding: 35px;
+    min-height: 140px;
+}
+
+.gold-card .sponsor-logo img {
+    max-height: 110px;
+}
+
+.gold-card .sponsor-category {
+    background-color: #D4AF37; /* Gold color */
+    font-size: 0.85rem;
+    padding: 14px 5px;
+}
+
+/* Silver Sponsors - Medium */
+.silver-card {
+    grid-column: span 2; /* Half width on desktop, will adjust for mobile */
+    min-height: 160px;
+}
+
+.silver-card .sponsor-logo {
+    padding: 30px;
+    min-height: 130px;
+}
+
+.silver-card .sponsor-logo img {
+    max-height: 90px;
+}
+
+.silver-card .sponsor-category {
+    background-color: #A9A9A9; /* Silver color */
+    font-size: 0.8rem;
+}
+
+/* Bronze Sponsor and Event Management - Medium-Small */
+.bronze-card, .event-card {
+    grid-column: span 2; /* Half width on desktop, will adjust for mobile */
+    min-height: 150px;
+}
+
+.bronze-card .sponsor-category {
+    background-color: #CD7F32; /* Bronze color */
+}
+
+.event-card .sponsor-category {
+    background-color: var(--toastmasters-true-maroon);
+}
+
+/* Partners - Small */
+.partner-card {
+    grid-column: span 1; /* Quarter width on desktop, will adjust for mobile */
+    min-height: 140px;
+}
+
+.partner-card .sponsor-logo {
+    padding: 20px;
+    min-height: 110px;
+}
+
+.partner-card .sponsor-logo img {
+    max-height: 70px;
+}
+
+.partner-card .sponsor-category {
+    background-color: var(--toastmasters-loyal-blue);
+    font-size: 0.7rem;
+    padding: 10px 5px;
+}
+
+/* Responsive Adaptations - Optimized for both website and app users */
+@media (max-width: 991px) {
+    .sponsors-container {
+        padding: 20px 15px;
+    }
+
+    .sponsor-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .strategic-card, .gold-card {
+        grid-column: span 3;
+    }
+
+    .silver-card, .bronze-card, .event-card {
+        grid-column: span 2;
+    }
+
+    .partner-card {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .sponsors-container {
+        padding: 20px 20px;
+    }
+
+    .sponsor-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .strategic-card, .gold-card {
+        grid-column: span 2;
+    }
+
+    .silver-card, .bronze-card, .event-card {
+        grid-column: span 1;
+    }
+
+    .sponsor-logo {
+        padding: 20px 15px;
+    }
+
+    .strategic-card .sponsor-logo {
+        padding: 25px;
+        min-height: 130px;
+    }
+
+    .strategic-card .sponsor-logo img,
+    .gold-card .sponsor-logo img {
+        max-height: 80px;
+    }
+
+    .silver-card .sponsor-logo img,
+    .bronze-card .sponsor-logo img,
+    .event-card .sponsor-logo img {
+        max-height: 70px;
+    }
+
+    .partner-card .sponsor-logo img {
+        max-height: 60px;
+    }
+
+    .sponsor-category {
+        padding: 8px 5px;
+        font-size: 0.65rem;
+    }
+
+    .strategic-card .sponsor-category,
+    .gold-card .sponsor-category {
+        font-size: 0.75rem;
+        padding: 10px 5px;
+    }
+}
+
+/* Optimized for mobile app users */
+@media (max-width: 480px) {
+    .sponsors-container {
+        padding: 20px 24px; /* Increased horizontal padding */
+    }
+
+    .sponsor-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Increased gap for better separation */
+    }
+
+    .strategic-card, .gold-card {
+        grid-column: span 2;
+    }
+
+    .silver-card, .bronze-card, .event-card,
+    .partner-card {
+        grid-column: span 1;
+    }
+
+    .sponsor-logo {
+        min-height: 90px;
+        padding: 15px;
+    }
+
+    .strategic-card .sponsor-logo,
+    .gold-card .sponsor-logo {
+        min-height: 110px;
+    }
+
+    .sponsor-logo img {
+        max-height: 60px;
+    }
+
+    .sponsor-category {
+        font-size: 0.6rem;
+        padding: 6px 2px;
+    }
+}
+
+/* RTL Support for Arabic version */
+[dir="rtl"] .sponsor-category {
+    letter-spacing: 0;
+}
+
+/* Loading optimizations for faster display on mobile */
+.sponsor-logo img {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
 }
